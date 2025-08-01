@@ -1,0 +1,32 @@
+
+--------------------------------------------------------------------------------------------
+# AWS Batch
+
+https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html
+https://docs.aws.amazon.com/batch/latest/userguide/getting-started-sagemaker.html
+https://docs.aws.amazon.com/pt_br/batch/latest/userguide/array_jobs.html
+https://docs.aws.amazon.com/pt_br/batch/latest/userguide/create-job-queue-fargate.html
+
+https://docs.aws.amazon.com/step-functions/latest/dg/sample-batch-fan-out.html
+
+--------------------------------------------------------------------------------------------
+# Aws Sagemaker Batch Transform
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html
+https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html?utm_source=chatgpt.com
+https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TransformS3DataSource.html?utm_source=chatgpt.com
+
+--------------------------------------------------------------------------------------------
+# ECS
+
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/standalone-task-create.html
+
+https://aws.amazon.com/pt/blogs/architecture/rate-limiting-strategies-for-serverless-applications
+https://aws.amazon.com/pt/blogs/containers/scale-to-15000-tasks-in-a-single-amazon-elastic-container-service-ecs-cluster/
+
+--------------------------------------------------------------------------------------------
+# Fargate
+
+https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/patterns/run-message-driven-workloads-at-scale-by-using-aws-fargate.html
+
