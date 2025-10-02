@@ -1,0 +1,33 @@
+{
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+
+  // Opcional: torne alguns diagnósticos mais rígidos
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownVariableType": "error",
+    "reportUnknownMemberType": "error",
+    "reportUnknownArgumentType": "error",
+    "reportUnknownLambdaType": "error",
+    "reportMissingTypeStubs": "warning",
+    "reportUntypedFunctionDecorator": "warning"
+  },
+
+  // Qualidade de vida
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.stubPath": "typings",
+  "python.analysis.exclude": [
+    "**/.venv/**",
+    "**/.env/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/.mypy_cache/**",
+    "**/.pytest_cache/**"
+  ],
+
+  // (Se usar Ruff para lint/format)
+  "ruff.fixAll": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  }
+}
