@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+
+ndvi = ds["NDVI"]  # banda NDVI
+n_times = len(ndvi.time)
+
+# cria subplots em linha
+fig, axes = plt.subplots(1, n_times, figsize=(5*n_times, 5))
+
+for i, t in enumerate(ndvi.time.values):
+    ax = axes[i] if n_times > 1 else axes
+    ndvi.sel(time=t).plot.imshow(
+        ax=ax,
+        cmap="RdYlGn",
+        vmin=-1, vmax=1,
+        add_colorbar=False
+    )
+    ax.set_title(str(t)[:10])
+
+fig.colorbar(
+    plt.cm.ScalarMappable(cmap="RdYlGn", norm=plt.Normalize(vmin=-1, vmax=1)),
+    ax=axes,
+    orientation="vertical",
+    fraction=0.02,
+    pad=0.04,
+    label="NDVI"
+)
+
+plt.tight_layout()
+plt.show()
