@@ -1,29 +1,25 @@
 import matplotlib.pyplot as plt
 
-ndvi = ds["NDVI"]  # banda NDVI
-n_times = len(ndvi.time)
+from rich.console import Console
+from rich.table import Table
 
-# cria subplots em linha
-fig, axes = plt.subplots(1, n_times, figsize=(5*n_times, 5))
+console = Console()
 
-for i, t in enumerate(ndvi.time.values):
-    ax = axes[i] if n_times > 1 else axes
-    ndvi.sel(time=t).plot.imshow(
-        ax=ax,
-        cmap="RdYlGn",
-        vmin=-1, vmax=1,
-        add_colorbar=False
-    )
-    ax.set_title(str(t)[:10])
+table = Table(title="Resumo do Job")
+table.add_column("#", style="dim", justify="right")
+table.add_column("ID", no_wrap=True)
+table.add_column("Status", justify="center")
+table.add_column("Mensagem")
+table.add_column("Duração (s)", justify="right")
 
-fig.colorbar(
-    plt.cm.ScalarMappable(cmap="RdYlGn", norm=plt.Normalize(vmin=-1, vmax=1)),
-    ax=axes,
-    orientation="vertical",
-    fraction=0.02,
-    pad=0.04,
-    label="NDVI"
-)
+rows = [
+    (1, "A-001", "OK", "processado", 0.31),
+    (2, "A-002", "FAIL", "timeout no S3", 2.05),
+    (3, "A-003", "OK", "processado", 0.28),
+]
 
-plt.tight_layout()
-plt.show()
+for i, rid, status, msg, dur in rows:
+    status_cell = "[green]OK[/green]" if status == "OK" else "[red]FAIL[/red]"
+    table.add_row(str(i), rid, status_cell, msg, f"{dur:.2f}")
+
+console.print(table)
