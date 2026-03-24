@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+COMMIT_ID="${1:-}"
+
+if [[ -z "$COMMIT_ID" ]]; then
+  echo "Uso: $0 <commit_id>"
+  exit 1
+fi
+
+# Verifica se está dentro de um repositório git
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "Erro: este diretório não é um repositório Git."
+  exit 1
+fi
+
+# Atualiza referências remotas
+git fetch --all --prune >/dev/null 2>&1
+
+# Verifica se o commit existe
+if ! git cat-file -e "${COMMIT_ID}^{commit}" 2>/dev/null; then
+  echo "Erro: commit '${COMMIT_ID}' não encontrado neste repositório."
+  exit 1
+fi
+
+echo "Commit: $COMMIT_ID"
+echo
+echo "Branches locais que contêm este commit:"
+LOCAL_BRANCHES=$(git branch --contains "$COMMIT_ID" --format='%(refname:short)')
+
+if [[ -n "$LOCAL_BRANCHES" ]]; then
+  echo "$LOCAL_BRANCHES"
+else
+  echo "Nenhuma branch local encontrada."
+fi
+
+echo
+echo "Branches remotas que contêm este commit:"
+REMOTE_BRANCHES=$(git branch -r --contains "$COMMIT_ID" | sed 's/^[ *]*//')
+
+if [[ -n "$REMOTE_BRANCHES" ]]; then
+  echo "$REMOTE_BRANCHES"
+else
+  echo "Nenhuma branch remota encontrada."
+fi
+
+
+################################################################################
+
+chmod +x find_commit_branch.sh
+./find_commit_branch.sh <hash_do_commit>
+
+
+./find_commit_branch.sh a1b2c3d4
