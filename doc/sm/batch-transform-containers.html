@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SageMaker Batch Transform — Tipos de Container</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F7F6F1;
+      --surface:  #EEECEA;
+      --border:   #D8D5CE;
+      --text:     #1A1A2E;
+      --muted:    #6E6A7A;
+      --accent:   #C84B31;
+      --accent-l: #F3E6E2;
+      --code-bg:  #1E1E2E;
+      --code-fg:  #CDD6F4;
+      --c-fn:     #89B4FA;
+      --c-kw:     #CBA6F7;
+      --c-str:    #A6E3A1;
+      --c-cm:     #585B70;
+      --c-tp:     #F9E2AF;
+      --c-sp:     #F38BA8;
+      --c-nm:     #FAB387;
+      --nav-w:    220px;
+
+      --dlc-color:    #2563EB;
+      --dlc-bg:       #EFF6FF;
+      --script-color: #7C3AED;
+      --script-bg:    #F5F3FF;
+      --byoc-color:   #059669;
+      --byoc-bg:      #ECFDF5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── layout ─────────────────────────────────────────────── */
+    .layout {
+      display: grid;
+      grid-template-columns: var(--nav-w) 1fr;
+      min-height: 100vh;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* ── nav ─────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    nav ul { list-style: none; }
+    nav ul li + li { margin-top: 2px; }
+
+    nav a {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: color .15s, border-color .15s, background .15s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+      border-left-color: var(--accent);
+      background: var(--accent-l);
+    }
+
+    .nav-group {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 16px 10px 6px;
+    }
+
+    /* ── tabs ────────────────────────────────────────────────── */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 52px;
+      padding-top: 40px;
+    }
+
+    .tab-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      background: none;
+      border: none;
+      padding: 10px 24px 12px;
+      cursor: pointer;
+      position: relative;
+      letter-spacing: .02em;
+      transition: color .15s;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform .2s;
+    }
+
+    .tab-btn:hover { color: var(--text); }
+
+    .tab-btn.active { color: var(--accent); }
+    .tab-btn.active::after { transform: scaleX(1); }
+
+    /* Tab buttons com cor por tipo */
+    .tab-btn[data-type="dlc"]:hover,
+    .tab-btn[data-type="dlc"].active    { color: var(--dlc-color); }
+    .tab-btn[data-type="dlc"]::after    { background: var(--dlc-color); }
+
+    .tab-btn[data-type="script"]:hover,
+    .tab-btn[data-type="script"].active { color: var(--script-color); }
+    .tab-btn[data-type="script"]::after { background: var(--script-color); }
+
+    .tab-btn[data-type="byoc"]:hover,
+    .tab-btn[data-type="byoc"].active   { color: var(--byoc-color); }
+    .tab-btn[data-type="byoc"]::after   { background: var(--byoc-color); }
+
+    /* Nav groups coloridos por tipo */
+    .nav-group.type-dlc    { color: var(--dlc-color); }
+    .nav-group.type-script { color: var(--script-color); }
+    .nav-group.type-byoc   { color: var(--byoc-color); }
+
+    /* Banner de tipo no topo de cada aba */
+    .type-banner {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin-bottom: 44px;
+      margin-top: 4px;
+    }
+    .type-banner.dlc    { background: var(--dlc-bg);    border: 1.5px solid #BFDBFE; }
+    .type-banner.script { background: var(--script-bg); border: 1.5px solid #DDD6FE; }
+    .type-banner.byoc   { background: var(--byoc-bg);   border: 1.5px solid #6EE7B7; }
+
+    .type-banner .tb-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .type-banner.dlc    .tb-pill { background: var(--dlc-color);    color: white; }
+    .type-banner.script .tb-pill { background: var(--script-color); color: white; }
+    .type-banner.byoc   .tb-pill { background: var(--byoc-color);   color: white; }
+
+    .type-banner .tb-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Borda esquerda colorida nos section-headers de cada aba de tipo */
+    #tab-dlc    .section-header { border-left: 4px solid var(--dlc-color);    padding-left: 16px; }
+    #tab-script .section-header { border-left: 4px solid var(--script-color); padding-left: 16px; }
+    #tab-byoc   .section-header { border-left: 4px solid var(--byoc-color);   padding-left: 16px; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── main ────────────────────────────────────────────────── */
+    main {
+      padding: 0 64px 100px 56px;
+      min-width: 0;
+    }
+
+    /* ── hero ────────────────────────────────────────────────── */
+    .hero {
+      margin-bottom: 64px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 48px;
+      max-width: 680px;
+    }
+
+    /* ── type pill badges ────────────────────────────────────── */
+    .type-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .type-pill.dlc    { background: var(--dlc-bg);    color: var(--dlc-color); }
+    .type-pill.script { background: var(--script-bg); color: var(--script-color); }
+    .type-pill.byoc   { background: var(--byoc-bg);   color: var(--byoc-color); }
+
+    /* ── overview cards (3 cols) ─────────────────────────────── */
+    .overview-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 52px;
+    }
+
+    .overview-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+    }
+
+    .overview-card .card-type {
+      margin-bottom: 12px;
+    }
+
+    .overview-card h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .overview-card .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .card-meta-label {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--muted);
+      min-width: 80px;
+      font-size: 11px;
+    }
+
+    .card-meta-val {
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .dot-yes  { color: #059669; font-weight: 600; }
+    .dot-no   { color: #DC2626; font-weight: 600; }
+    .dot-opt  { color: #D97706; font-weight: 600; }
+
+    /* ── comparison table ─────────────────────────────────────── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 52px;
+    }
+
+    .comparison-table th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 12px 16px;
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+    }
+
+    .comparison-table th:first-child { border-radius: 8px 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 8px 0 0; }
+
+    .comparison-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .comparison-table tr:last-child td { border-bottom: none; }
+
+    .comparison-table tr:hover td { background: var(--surface); }
+
+    .comparison-table .row-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── section headers ─────────────────────────────────────── */
+    .section {
+      margin-bottom: 56px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+
+    h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 24px;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 12px;
+      max-width: 740px;
+    }
+
+    /* ── lifecycle diagram ───────────────────────────────────── */
+    .lifecycle {
+      display: grid;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .lc-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .lc-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      font-size: 18px;
+      color: var(--c-cm);
+      flex-shrink: 0;
+    }
+
+    .lc-node {
+      flex: 1;
+      background: var(--code-bg);
+      border-radius: 8px;
+      padding: 20px 24px 16px;
+      margin: 4px 0;
+    }
+
+    .lc-trigger {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-cm);
+      margin-bottom: 6px;
+    }
+
+    .lc-method {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-fn);
+      margin-bottom: 6px;
+    }
+
+    .lc-desc {
+      font-size: 12px;
+      color: #A6ADC8;
+      line-height: 1.5;
+    }
+
+    /* ── code blocks ─────────────────────────────────────────── */
+    .code-block {
+      background: var(--code-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid #313244;
+    }
+
+    .code-lang {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-cm);
+    }
+
+    .code-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: #A6ADC8;
+    }
+
+    pre {
+      padding: 20px 24px;
+      overflow-x: auto;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--code-fg);
+    }
+
+    /* syntax colours */
+    .kw  { color: var(--c-kw); }
+    .fn  { color: var(--c-fn); }
+    .st  { color: var(--c-str); }
+    .cm  { color: var(--c-cm); font-style: italic; }
+    .tp  { color: var(--c-tp); }
+    .sp  { color: var(--c-sp); }
+    .nm  { color: var(--c-nm); }
+
+    /* ── option tables ───────────────────────────────────────── */
+    .opts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .opts-table th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+    }
+
+    .opts-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .opts-table tr:last-child td { border-bottom: none; }
+
+    .opts-table .key {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: #1E40AF;
+      white-space: nowrap;
+    }
+
+    .opts-table .val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--c-str);
+    }
+
+    .opts-table .required {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .opts-table .req-y  { background: #1e3a2a; color: #4ade80; }
+    .opts-table .req-n  { background: #2d1f1f; color: #f87171; }
+    .opts-table .req-o  { background: #2d2619; color: #fbbf24; }
+
+    /* ── callout boxes ───────────────────────────────────────── */
+    .callout {
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .callout-body { font-size: 13px; line-height: 1.6; }
+    .callout.info    { background: #EFF6FF; border-left: 3px solid var(--dlc-color); }
+    .callout.warning { background: #FFFBEB; border-left: 3px solid #D97706; }
+    .callout.tip     { background: var(--byoc-bg); border-left: 3px solid var(--byoc-color); }
+
+    /* ── pros/cons ───────────────────────────────────────────── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .pros, .cons {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .pros { border-top: 3px solid var(--byoc-color); }
+    .cons { border-top: 3px solid var(--accent); }
+
+    .pros-cons h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 11px;
+    }
+
+    .pros ul, .cons ul {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .pros ul li::before { content: '+  '; color: var(--byoc-color); font-weight: 700; font-family: monospace; }
+    .cons ul li::before { content: '−  '; color: var(--accent);     font-weight: 700; font-family: monospace; }
+
+    .pros ul li, .cons ul li {
+      padding: 3px 0;
+      color: var(--text);
+    }
+
+    /* ── tar.gz tree ─────────────────────────────────────────── */
+    .tree-block {
+      background: var(--code-bg);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--code-fg);
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+
+    .tree-block .dir  { color: var(--c-fn); }
+    .tree-block .file { color: var(--code-fg); }
+    .tree-block .ann  { color: var(--c-cm); font-style: italic; }
+
+    /* ── when-to-use band ─────────────────────────────────────── */
+    .when-band {
+      background: var(--code-bg);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+
+    .when-band .wb-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-cm);
+      margin-bottom: 14px;
+    }
+
+    .when-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .when-list li {
+      font-size: 13px;
+      color: #CDD6F4;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .when-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--c-str);
+      font-weight: 700;
+    }
+
+    /* ── deploy steps ─────────────────────────────────────────── */
+    .steps {
+      counter-reset: step;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      position: relative;
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      left: 17px;
+      top: 36px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .step:last-child::before { display: none; }
+
+    .step-num {
+      counter-increment: step;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .step-body {
+      padding-bottom: 28px;
+    }
+
+    .step-body h4 {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* ── env var table ────────────────────────────────────────── */
+    .env-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; }
+    .env-table th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+    }
+    .env-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .env-table tr:last-child td { border-bottom: none; }
+    .env-table .env-key { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1E40AF; }
+    .env-table .env-default { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--c-nm); }
+
+    /* ── scrollspy ────────────────────────────────────────────── */
+    .nav-sub {
+      padding-left: 12px;
+    }
+
+    .nav-sub a {
+      font-size: 11px;
+      padding: 3px 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ══════════════════════════ NAV ══════════════════════════ -->
+<nav>
+  <div class="nav-logo">Batch Transform</div>
+  <ul>
+    <li><a href="#overview" onclick="setTab('overview', this)">Visão Geral</a></li>
+    <li><a href="#comparison" onclick="setTab('overview', this)">Comparação</a></li>
+
+    <li class="nav-group type-dlc">DLC Puro</li>
+    <li><a href="#dlc-concept" onclick="setTab('dlc', this)">Conceito</a></li>
+    <li><a href="#dlc-lifecycle" onclick="setTab('dlc', this)">Ciclo de Vida</a></li>
+    <li><a href="#dlc-artifacts" onclick="setTab('dlc', this)">Artefatos</a></li>
+    <li><a href="#dlc-options" onclick="setTab('dlc', this)">Opções</a></li>
+    <li><a href="#dlc-deploy" onclick="setTab('dlc', this)">Deploy</a></li>
+
+    <li class="nav-group type-script">DLC + Script Mode</li>
+    <li><a href="#script-concept" onclick="setTab('script', this)">Conceito</a></li>
+    <li><a href="#script-contract" onclick="setTab('script', this)">Contrato das 4 Funções</a></li>
+    <li><a href="#script-lifecycle" onclick="setTab('script', this)">Ciclo de Vida</a></li>
+    <li><a href="#script-artifacts" onclick="setTab('script', this)">Artefatos</a></li>
+    <li><a href="#script-options" onclick="setTab('script', this)">Opções</a></li>
+    <li><a href="#script-deploy" onclick="setTab('script', this)">Deploy</a></li>
+
+    <li class="nav-group type-byoc">BYOC</li>
+    <li><a href="#byoc-concept" onclick="setTab('byoc', this)">Conceito</a></li>
+    <li><a href="#byoc-contract" onclick="setTab('byoc', this)">Contrato HTTP</a></li>
+    <li><a href="#byoc-lifecycle" onclick="setTab('byoc', this)">Ciclo de Vida</a></li>
+    <li><a href="#byoc-artifacts" onclick="setTab('byoc', this)">Artefatos</a></li>
+    <li><a href="#byoc-options" onclick="setTab('byoc', this)">Opções</a></li>
+    <li><a href="#byoc-deploy" onclick="setTab('byoc', this)">Deploy</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════ MAIN ══════════════════════════ -->
+<main>
+
+  <!-- ── hero ──────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-eyebrow">SageMaker · Batch Transform</div>
+    <h1>Tipos de Container</h1>
+    <p class="hero-sub">
+      O SageMaker Batch Transform suporta três estratégias de container para servir modelos em
+      processamento em lote. Cada uma representa um ponto diferente no tradeoff entre
+      conveniência, controle e complexidade operacional.
+    </p>
+
+    <!-- 3 cards resumo -->
+    <div class="overview-cards">
+
+      <div class="overview-card">
+        <div class="card-type"><span class="type-pill dlc">DLC Puro</span></div>
+        <h3>Deep Learning Container</h3>
+        <p class="card-desc">
+          Container gerenciado pela AWS. Zero Dockerfile. Zero código de serving.
+          O modelo é servido pelo framework nativo do DLC (TorchServe, TF Serving…).
+        </p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="card-meta-label">Dockerfile</span><span class="dot-no">✗ Não</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">ECR push</span><span class="dot-no">✗ Não</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Código custom</span><span class="dot-no">✗ Não</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Cold start</span><span class="card-meta-val">Rápido</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Flexibilidade</span><span class="card-meta-val">Baixa</span></div>
+        </div>
+      </div>
+
+      <div class="overview-card">
+        <div class="card-type"><span class="type-pill script">DLC + Script Mode</span></div>
+        <h3>Script Mode</h3>
+        <p class="card-desc">
+          Mesma imagem gerenciada, mas com código de inferência customizado empacotado
+          no <code>model.tar.gz</code>. Contrato de 4 funções Python.
+        </p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="card-meta-label">Dockerfile</span><span class="dot-no">✗ Não</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">ECR push</span><span class="dot-no">✗ Não</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Código custom</span><span class="dot-yes">✓ Sim</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Cold start</span><span class="card-meta-val">Médio (pip install)</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Flexibilidade</span><span class="card-meta-val">Média</span></div>
+        </div>
+      </div>
+
+      <div class="overview-card">
+        <div class="card-type"><span class="type-pill byoc">BYOC</span></div>
+        <h3>Bring Your Own Container</h3>
+        <p class="card-desc">
+          Dockerfile customizado, servidor HTTP próprio (/ping + /invocations).
+          Controle total sobre o runtime, dependências e formato de I/O.
+        </p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="card-meta-label">Dockerfile</span><span class="dot-yes">✓ Sim</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">ECR push</span><span class="dot-yes">✓ Sim</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Código custom</span><span class="dot-yes">✓ Sim</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Cold start</span><span class="card-meta-val">Rápido (baked)</span></div>
+          <div class="card-meta-row"><span class="card-meta-label">Flexibilidade</span><span class="card-meta-val">Total</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── tab bar ────────────────────────────────────────────── -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('overview', this)">Visão Geral</button>
+    <button class="tab-btn" data-type="dlc" onclick="switchTab('dlc', this)">DLC</button>
+    <button class="tab-btn" data-type="script" onclick="switchTab('script', this)">Script Mode</button>
+    <button class="tab-btn" data-type="byoc" onclick="switchTab('byoc', this)">BYOC</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAB: VISÃO GERAL
+  ══════════════════════════════════════════════════════════ -->
+  <div id="tab-overview" class="tab-content active">
+
+    <div class="section" id="overview">
+      <div class="section-header">
+        <h2>Quando usar cada abordagem</h2>
+      </div>
+
+      <div class="when-band">
+        <div class="wb-title">DLC Puro — escolha quando</div>
+        <ul class="when-list">
+          <li>O modelo é exportado em um formato nativamente suportado pelo DLC (TorchScript, SavedModel, ONNX via TF…)</li>
+          <li>Não há pré-processamento ou pós-processamento customizados além do que o framework oferece</li>
+          <li>A equipe não tem experiência em Docker e deseja o mínimo de atrito operacional</li>
+          <li>Prototipagem inicial onde a prioridade é velocidade de setup</li>
+        </ul>
+      </div>
+
+      <div class="when-band" style="background:#1a1030">
+        <div class="wb-title">DLC + Script Mode — escolha quando</div>
+        <ul class="when-list">
+          <li>O modelo precisa de lógica customizada de carregamento, pré ou pós-processamento</li>
+          <li>As dependências extras são leves (instaladas via pip em segundos) e o cold start não é crítico</li>
+          <li>Você quer evitar manter um Dockerfile e ciclo de build/push para o ECR</li>
+          <li>O formato de I/O (JSONL, campos específicos) não é suportado pelo DLC nativo</li>
+          <li>A lógica de inferência inclui acesso a recursos externos por record (ex: download de imagens do S3)</li>
+        </ul>
+      </div>
+
+      <div class="when-band" style="background:#0d1f18">
+        <div class="wb-title">BYOC — escolha quando</div>
+        <ul class="when-list">
+          <li>As dependências são pesadas ou incompatíveis com o pip install em runtime (ex: CUDA toolkit específico, bibliotecas C++)</li>
+          <li>O cold start precisa ser o mais rápido possível (todas as deps estão baked na imagem)</li>
+          <li>O servidor HTTP precisa de endpoints extras além de /ping e /invocations</li>
+          <li>Você está usando um servidor de inferência especializado (Triton, TorchServe customizado, BentoML)</li>
+          <li>Há requisitos de compliance que exigem que a imagem seja auditada e imutável</li>
+          <li>O modelo está em formato não suportado pelo DLC (ex: ExportedProgram .pt2, ONNX via Triton ensemble)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="comparison">
+      <div class="section-header">
+        <h2>Tabela comparativa completa</h2>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:26%">Dimensão</th>
+            <th><span class="type-pill dlc" style="font-size:10px">DLC Puro</span></th>
+            <th><span class="type-pill script" style="font-size:10px">Script Mode</span></th>
+            <th><span class="type-pill byoc" style="font-size:10px">BYOC</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">Dockerfile</td>
+            <td><span class="dot-no">✗ Não necessário</span></td>
+            <td><span class="dot-no">✗ Não necessário</span></td>
+            <td><span class="dot-yes">✓ Obrigatório</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Push para ECR</td>
+            <td><span class="dot-no">✗ Não</span></td>
+            <td><span class="dot-no">✗ Não</span></td>
+            <td><span class="dot-yes">✓ Obrigatório</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Imagem usada</td>
+            <td>DLC AWS (ex: pytorch-inference:2.5.1)</td>
+            <td>DLC AWS (mesma imagem)</td>
+            <td>Imagem própria em ECR</td>
+          </tr>
+          <tr>
+            <td class="row-label">Código de inferência</td>
+            <td>Nenhum — DLC serve diretamente</td>
+            <td>inference.py com 4 funções</td>
+            <td>Servidor HTTP completo (FastAPI, Flask, Triton…)</td>
+          </tr>
+          <tr>
+            <td class="row-label">Instalação de deps</td>
+            <td>Nenhuma extra</td>
+            <td>pip install em runtime (a cada cold start)</td>
+            <td>Baked na imagem (build time)</td>
+          </tr>
+          <tr>
+            <td class="row-label">Cold start</td>
+            <td>Rápido</td>
+            <td>Mais lento (pip install)</td>
+            <td>Rápido (tudo pré-instalado)</td>
+          </tr>
+          <tr>
+            <td class="row-label">Formatos suportados</td>
+            <td>Limitado ao DLC (TorchScript, .pth via TorchServe, SavedModel)</td>
+            <td>Qualquer formato que o código Python consiga carregar</td>
+            <td>Qualquer formato</td>
+          </tr>
+          <tr>
+            <td class="row-label">Variáveis de ambiente-chave</td>
+            <td>Depende do DLC (ex: <code>MODEL_SERVER_WORKERS</code>)</td>
+            <td><code>SAGEMAKER_PROGRAM</code>, <code>SAGEMAKER_SUBMIT_DIRECTORY</code></td>
+            <td>Livres — definidas no Dockerfile e no create-model</td>
+          </tr>
+          <tr>
+            <td class="row-label">SplitType recomendado</td>
+            <td>Depende do caso</td>
+            <td>Line (JSONL) ou None</td>
+            <td>Line (JSONL) ou None</td>
+          </tr>
+          <tr>
+            <td class="row-label">BatchStrategy</td>
+            <td>SingleRecord ou MultiRecord</td>
+            <td>SingleRecord ou MultiRecord</td>
+            <td>SingleRecord ou MultiRecord</td>
+          </tr>
+          <tr>
+            <td class="row-label">Endpoint /execution-parameters</td>
+            <td>Implementado pelo DLC</td>
+            <td>Implementado pelo DLC</td>
+            <td>Opcional — pode ser implementado no servidor</td>
+          </tr>
+          <tr>
+            <td class="row-label">Flexibilidade de I/O</td>
+            <td>Baixa — formato ditado pelo DLC</td>
+            <td>Alta — output_fn define o formato</td>
+            <td>Total</td>
+          </tr>
+          <tr>
+            <td class="row-label">Manutenção</td>
+            <td>Baixa — só atualizar model.tar.gz</td>
+            <td>Baixa — só atualizar model.tar.gz</td>
+            <td>Alta — rebuild + push a cada mudança de dep</td>
+          </tr>
+          <tr>
+            <td class="row-label">Exemplo neste projeto</td>
+            <td>—</td>
+            <td><code>app/pytorch/inference.py</code></td>
+            <td><code>app/pt2/</code> (FastAPI) · <code>app/onnx/</code> (Triton ONNX)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout info">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-body">
+          <strong>DLC + Dockerfile estendido</strong> (ex: <code>app/triton_aws/</code>): existe uma
+          variante híbrida onde se usa uma DLC da AWS como <code>FROM</code> base e acrescenta-se
+          dependências extras. Ela exige Dockerfile e ECR push (como BYOC), mas aproveita o
+          middleware SageMaker já embutido na DLC (<code>/ping</code> e <code>/invocations</code>
+          mapeados para o Triton automaticamente). Neste documento essa variante é tratada como BYOC.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-overview -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAB: DLC PURO
+  ══════════════════════════════════════════════════════════ -->
+  <div id="tab-dlc" class="tab-content">
+
+    <div class="type-banner dlc">
+      <span class="tb-pill">DLC Puro</span>
+      <span class="tb-desc">Container gerenciado pela AWS — sem Dockerfile, sem ECR push. O modelo é servido diretamente pelo framework nativo (TorchServe, TF Serving…).</span>
+    </div>
+
+    <div class="section" id="dlc-concept">
+      <div class="section-header">
+        <span class="type-pill dlc">DLC Puro</span>
+        <h2>Conceito</h2>
+      </div>
+
+      <p>
+        No modo DLC puro, você não escreve nenhum código de serving nem cria Dockerfile.
+        A AWS fornece imagens pré-construídas para PyTorch, TensorFlow, MXNet e outros frameworks,
+        com um servidor de inferência embutido que já expõe os endpoints <code>/ping</code> e
+        <code>/invocations</code> que o SageMaker Batch Transform espera.
+      </p>
+      <p>
+        Para PyTorch, o DLC usa o <strong>TorchServe</strong> internamente. Para TensorFlow,
+        o <strong>TF Serving</strong>. Você apenas entrega os artefatos do modelo em um
+        <code>model.tar.gz</code> com a estrutura que o DLC espera, e o SageMaker cuida do resto.
+      </p>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vantagens</h4>
+          <ul>
+            <li>Zero Dockerfile, zero ECR push</li>
+            <li>Manutenção mínima — basta atualizar o model.tar.gz</li>
+            <li>Cold start rápido (sem pip install em runtime)</li>
+            <li>A AWS atualiza e corrige a imagem</li>
+            <li>Ideal para protótipos rápidos</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Limitações</h4>
+          <ul>
+            <li>Formato do modelo limitado ao que o DLC suporta</li>
+            <li>I/O fixo — o formato de entrada/saída é ditado pelo DLC</li>
+            <li>Sem lógica de pré/pós-processamento customizada</li>
+            <li>Sem acesso a recursos externos por record (ex: S3)</li>
+            <li>Difícil de debugar localmente sem replicar o TorchServe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="dlc-lifecycle">
+      <div class="section-header">
+        <h2>Ciclo de vida do container</h2>
+      </div>
+
+      <div class="lifecycle">
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">1 — Inicialização</div>
+            <div class="lc-method">Pull da DLC · Extração do model.tar.gz</div>
+            <div class="lc-desc">O SageMaker faz pull da imagem DLC da AWS. O model.tar.gz é extraído em <code>/opt/ml/model/</code>. O TorchServe (ou equivalente) carrega o modelo.</div>
+          </div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-arrow">↓</div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">2 — Health check</div>
+            <div class="lc-method">GET /ping → 200</div>
+            <div class="lc-desc">O DLC responde ao health check assim que o servidor de inferência está pronto. Nenhum código seu é executado.</div>
+          </div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-arrow">↓</div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">3 — Inferência</div>
+            <div class="lc-method">POST /invocations</div>
+            <div class="lc-desc">O Batch Transform envia os dados no formato esperado pelo DLC. O TorchServe executa a inferência com o modelo carregado e devolve o resultado. Nenhuma função customizada é chamada.</div>
+          </div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-arrow">↓</div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">4 — Finalização</div>
+            <div class="lc-method">Container destruído</div>
+            <div class="lc-desc">Ao fim do job, o container é destruído. Os artefatos do modelo em S3 permanecem intactos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="dlc-artifacts">
+      <div class="section-header">
+        <h2>Estrutura do model.tar.gz</h2>
+      </div>
+
+      <p>
+        Para o DLC PyTorch com TorchServe, o <code>model.tar.gz</code> pode conter um
+        <code>.mar</code> (Model Archive) gerado pelo <code>torch-model-archiver</code>, ou
+        diretamente um arquivo <code>.pt</code> (TorchScript) com um handler padrão.
+      </p>
+
+      <div class="tree-block">
+<span class="dir">model.tar.gz</span>
+├── <span class="file">model.pt</span>            <span class="ann">← TorchScript compilado (torch.jit.script/trace)</span>
+└── <span class="file">config/</span>
+    └── <span class="file">model_config.yaml</span>  <span class="ann">← configuração do TorchServe (opcional)</span>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          A estrutura exata do <code>model.tar.gz</code> varia por DLC e versão. Consulte a
+          documentação da AWS para o framework e versão específicos que você está usando.
+          O DLC PyTorch via TorchServe tem requisitos diferentes do DLC TensorFlow via TF Serving.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="dlc-options">
+      <div class="section-header">
+        <h2>Opções de configuração</h2>
+      </div>
+
+      <h3>Obtendo a URI da imagem DLC</h3>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-lang">Python</span>
+          <span class="code-title">sagemaker.image_uris.retrieve()</span>
+        </div>
+        <pre><span class="kw">import</span> sagemaker
+
+<span class="cm"># Recupera a URI correta para sua região e versão do framework</span>
+image_uri = sagemaker.image_uris.retrieve(
+    framework     = <span class="st">"pytorch"</span>,       <span class="cm"># "tensorflow", "mxnet", "huggingface"…</span>
+    region        = <span class="st">"us-east-1"</span>,
+    version       = <span class="st">"2.5.1"</span>,         <span class="cm"># versão do PyTorch</span>
+    py_version    = <span class="st">"py311"</span>,
+    image_scope   = <span class="st">"inference"</span>,     <span class="cm"># sempre "inference" para Batch Transform</span>
+    instance_type = <span class="st">"ml.g4dn.xlarge"</span>, <span class="cm"># afeta qual variante GPU/CPU é selecionada</span>
+)
+<span class="cm"># Resultado: 763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-inference:2.5.1-gpu-py311-cu121-ubuntu20.04-sagemaker</span></pre>
+      </div>
+
+      <h3>create_model — opções relevantes</h3>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Parâmetro</th><th>Tipo</th><th>Obrigatório</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">PrimaryContainer.Image</td>
+            <td>string</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>URI da imagem DLC obtida com <code>image_uris.retrieve()</code></td>
+          </tr>
+          <tr>
+            <td class="key">PrimaryContainer.ModelDataUrl</td>
+            <td>string</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>s3:// URI do model.tar.gz</td>
+          </tr>
+          <tr>
+            <td class="key">PrimaryContainer.Environment</td>
+            <td>dict</td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Variáveis de ambiente passadas para o container</td>
+          </tr>
+          <tr>
+            <td class="key">ExecutionRoleArn</td>
+            <td>string</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>IAM Role com acesso ao S3 e ECR</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Variáveis de ambiente úteis (DLC PyTorch)</h3>
+
+      <table class="env-table">
+        <thead>
+          <tr><th>Variável</th><th>Default</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="env-key">MODEL_SERVER_WORKERS</td>
+            <td class="env-default">1</td>
+            <td>Número de workers do TorchServe. Aumentar pode melhorar o throughput em CPU.</td>
+          </tr>
+          <tr>
+            <td class="env-key">MODEL_SERVER_TIMEOUT</td>
+            <td class="env-default">60</td>
+            <td>Timeout (segundos) para cada request de inferência.</td>
+          </tr>
+          <tr>
+            <td class="env-key">SAGEMAKER_MODEL_SERVER_WORKERS</td>
+            <td class="env-default">1</td>
+            <td>Alternativa ao MODEL_SERVER_WORKERS para DLCs mais recentes.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>create_transform_job — opções do Batch Transform</h3>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Parâmetro</th><th>Valores</th><th>Obrigatório</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">BatchStrategy</td>
+            <td><span class="val">SingleRecord | MultiRecord</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Como o SageMaker agrupa linhas do JSONL para enviar ao container. <code>MultiRecord</code> agrupa até MaxPayloadInMB em um único POST.</td>
+          </tr>
+          <tr>
+            <td class="key">MaxConcurrentTransforms</td>
+            <td><span class="val">1..N</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Requisições simultâneas ao container. Aumentar requer que o servidor suporte concorrência.</td>
+          </tr>
+          <tr>
+            <td class="key">MaxPayloadInMB</td>
+            <td><span class="val">1..100</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Tamanho máximo do payload em MB por requisição ao container.</td>
+          </tr>
+          <tr>
+            <td class="key">TransformInput.SplitType</td>
+            <td><span class="val">None | Line | RecordIO | TFRecord</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td><code>Line</code>: divide o arquivo por linha antes de enviar. <code>None</code>: envia o arquivo inteiro.</td>
+          </tr>
+          <tr>
+            <td class="key">TransformInput.ContentType</td>
+            <td><span class="val">string MIME</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Passado como header Content-Type nas requisições ao container.</td>
+          </tr>
+          <tr>
+            <td class="key">TransformOutput.AssembleWith</td>
+            <td><span class="val">None | Line</span></td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td><code>Line</code>: concatena as respostas com <code>\n</code> no arquivo de saída.</td>
+          </tr>
+          <tr>
+            <td class="key">TransformResources.InstanceType</td>
+            <td><span class="val">ml.*</span></td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>Tipo de instância. Deve ser compatível com a variante da imagem (GPU vs CPU).</td>
+          </tr>
+          <tr>
+            <td class="key">TransformResources.InstanceCount</td>
+            <td><span class="val">1..N</span></td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>Número de instâncias. Com múltiplas instâncias, o SageMaker distribui o input entre elas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section" id="dlc-deploy">
+      <div class="section-header">
+        <h2>Deploy — passo a passo</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Empacotar os artefatos</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre>tar -czf model.tar.gz -C model_artifacts/ .
+aws s3 cp model.tar.gz s3://meu-bucket/models/model.tar.gz</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Obter URI da DLC e criar o Model</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre><span class="kw">import</span> boto3, sagemaker
+
+image_uri = sagemaker.image_uris.retrieve(
+    framework=<span class="st">"pytorch"</span>, region=<span class="st">"us-east-1"</span>,
+    version=<span class="st">"2.5.1"</span>, py_version=<span class="st">"py311"</span>,
+    image_scope=<span class="st">"inference"</span>, instance_type=<span class="st">"ml.g4dn.xlarge"</span>,
+)
+
+sm = boto3.client(<span class="st">"sagemaker"</span>)
+sm.create_model(
+    ModelName=<span class="st">"meu-modelo-dlc"</span>,
+    PrimaryContainer={
+        <span class="st">"Image"</span>:        image_uri,
+        <span class="st">"ModelDataUrl"</span>: <span class="st">"s3://meu-bucket/models/model.tar.gz"</span>,
+    },
+    ExecutionRoleArn=<span class="st">"arn:aws:iam::ACCOUNT:role/SageMakerExecutionRole"</span>,
+)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Criar o Batch Transform Job</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre>sm.create_transform_job(
+    TransformJobName=<span class="st">"job-dlc-001"</span>,
+    ModelName=<span class="st">"meu-modelo-dlc"</span>,
+    BatchStrategy=<span class="st">"MultiRecord"</span>,         <span class="cm"># agrupa registros por payload</span>
+    MaxConcurrentTransforms=<span class="nm">4</span>,
+    MaxPayloadInMB=<span class="nm">6</span>,
+    TransformInput={
+        <span class="st">"DataSource"</span>: {<span class="st">"S3DataSource"</span>: {
+            <span class="st">"S3DataType"</span>: <span class="st">"S3Prefix"</span>,
+            <span class="st">"S3Uri"</span>:     <span class="st">"s3://meu-bucket/input/"</span>,
+        }},
+        <span class="st">"ContentType"</span>: <span class="st">"application/json"</span>,
+        <span class="st">"SplitType"</span>:   <span class="st">"Line"</span>,
+    },
+    TransformOutput={
+        <span class="st">"S3OutputPath"</span>: <span class="st">"s3://meu-bucket/output/"</span>,
+        <span class="st">"AssembleWith"</span>: <span class="st">"Line"</span>,
+    },
+    TransformResources={
+        <span class="st">"InstanceType"</span>:  <span class="st">"ml.g4dn.xlarge"</span>,
+        <span class="st">"InstanceCount"</span>: <span class="nm">1</span>,
+    },
+)</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-dlc -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAB: SCRIPT MODE
+  ══════════════════════════════════════════════════════════ -->
+  <div id="tab-script" class="tab-content">
+
+    <div class="type-banner script">
+      <span class="tb-pill">DLC + Script Mode</span>
+      <span class="tb-desc">Mesma imagem DLC da AWS, com código customizado em <code>code/inference.py</code> dentro do model.tar.gz — sem Dockerfile, sem ECR push.</span>
+    </div>
+
+    <div class="section" id="script-concept">
+      <div class="section-header">
+        <span class="type-pill script">DLC + Script Mode</span>
+        <h2>Conceito</h2>
+      </div>
+
+      <p>
+        O Script Mode usa a mesma imagem DLC gerenciada, mas permite que você injete
+        código Python de inferência customizado diretamente dentro do <code>model.tar.gz</code>.
+        O DLC detecta a pasta <code>code/</code> e a variável de ambiente
+        <code>SAGEMAKER_PROGRAM</code>, e chama suas funções Python no lugar do handler padrão.
+      </p>
+      <p>
+        Isso elimina a necessidade de Dockerfile e ECR push, mas dá controle completo sobre
+        como o modelo é carregado, como os dados de entrada são desserializados e como os
+        resultados são serialados de volta ao SageMaker.
+      </p>
+      <p>
+        <strong>Exemplo neste projeto:</strong> <code>app/pytorch/inference.py</code> — serve
+        o modelo ResNet18 carregado via <code>state_dict</code> (.pth), com download de imagens
+        do S3 por record e saída em JSONL.
+      </p>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vantagens</h4>
+          <ul>
+            <li>Sem Dockerfile nem ECR push</li>
+            <li>Lógica de pré/pós-processamento completamente customizada</li>
+            <li>Dependências extras via requirements.txt no tar.gz</li>
+            <li>Qualquer formato de modelo suportado pelo Python</li>
+            <li>Testável localmente sem Docker</li>
+            <li>A AWS gerencia patches de segurança da imagem base</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Limitações</h4>
+          <ul>
+            <li>pip install em runtime: cold start mais lento</li>
+            <li>Dependências pesadas (ex: CUDA-specific libs) podem ser problemáticas</li>
+            <li>Limitado às 4 funções do contrato — sem endpoints extras</li>
+            <li>Sem controle sobre o servidor HTTP interno (TorchServe/SageMaker MMS)</li>
+            <li>Debugging requer simular o ambiente DLC localmente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="script-contract">
+      <div class="section-header">
+        <h2>Contrato das 4 funções</h2>
+      </div>
+
+      <p>
+        O DLC espera que <code>inference.py</code> exporte exatamente essas quatro funções.
+        O pipeline é composto automaticamente:
+      </p>
+
+      <div class="lifecycle">
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">Chamada UMA VEZ — ao subir o container</div>
+            <div class="lc-method"><span class="kw">def</span> <span class="fn">model_fn</span>(model_dir: str)</div>
+            <div class="lc-desc">Carrega o modelo de <code>/opt/ml/model/</code> e retorna um objeto de contexto. Esse objeto é repassado como segundo argumento de <code>predict_fn</code> em todas as chamadas subsequentes.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">Cada POST /invocations — passo 1/3</div>
+            <div class="lc-method"><span class="kw">def</span> <span class="fn">input_fn</span>(request_body, content_type)</div>
+            <div class="lc-desc">Desserializa o body HTTP recebido. Com <code>SplitType=Line</code> + <code>SingleRecord</code>, recebe uma linha por chamada. Com <code>MultiRecord</code>, pode receber N linhas. Deve retornar os dados no formato que <code>predict_fn</code> espera.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">Cada POST /invocations — passo 2/3</div>
+            <div class="lc-method"><span class="kw">def</span> <span class="fn">predict_fn</span>(data, model)</div>
+            <div class="lc-desc">Executa a inferência. Recebe o output de <code>input_fn</code> e o contexto retornado por <code>model_fn</code>. É aqui que acontece download de S3, pré-processamento, inferência e pós-processamento.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">Cada POST /invocations — passo 3/3</div>
+            <div class="lc-method"><span class="kw">def</span> <span class="fn">output_fn</span>(prediction, accept)</div>
+            <div class="lc-desc">Serializa o resultado para o body HTTP de resposta. Deve retornar uma tupla <code>(body, content_type)</code>. O <code>content_type</code> vira o header <code>Content-Type</code> da resposta.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-lang">Python</span>
+          <span class="code-title">app/pytorch/inference.py — esqueleto comentado</span>
+        </div>
+        <pre><span class="kw">def</span> <span class="fn">model_fn</span>(model_dir: str) -> dict:
+    <span class="cm">"""Chamada 1x ao subir. model_dir = /opt/ml/model/"""</span>
+    model = ResNet18Model()
+    model.load_state_dict(torch.load(f<span class="st">"{model_dir}/ResNet18.pth"</span>, weights_only=<span class="kw">True</span>))
+    model.eval()
+    <span class="kw">return</span> {<span class="st">"model"</span>: model, <span class="st">"device"</span>: device}
+
+
+<span class="kw">def</span> <span class="fn">input_fn</span>(request_body: <span class="tp">bytes</span>, content_type: str) -> list[dict]:
+    <span class="cm">"""Desserializa o JSONL recebido. Retorna lista de dicts."""</span>
+    lines = request_body.decode().strip().splitlines()
+    <span class="kw">return</span> [json.loads(ln) <span class="kw">for</span> ln <span class="kw">in</span> lines <span class="kw">if</span> ln.strip()]
+
+
+<span class="kw">def</span> <span class="fn">predict_fn</span>(data: list[dict], model_ctx: dict) -> list[dict]:
+    <span class="cm">"""Download S3 + inferência para cada record."""</span>
+    results = []
+    <span class="kw">for</span> record <span class="kw">in</span> data:
+        img    = s3_utils.download_image(record[<span class="st">"image_s3_path"</span>])
+        tensor = transform(img).unsqueeze(<span class="nm">0</span>).to(model_ctx[<span class="st">"device"</span>])
+        <span class="kw">with</span> torch.no_grad():
+            scores = model_ctx[<span class="st">"model"</span>](tensor)[<span class="nm">0</span>]
+        results.append({<span class="st">"record_id"</span>: record[<span class="st">"record_id"</span>], <span class="st">"class"</span>: CLASSES[scores.argmax()]})
+    <span class="kw">return</span> results
+
+
+<span class="kw">def</span> <span class="fn">output_fn</span>(prediction: list[dict], accept: str) -> tuple[str, str]:
+    <span class="cm">"""Serializa como JSONL. Retorna (body, content_type)."""</span>
+    body = <span class="st">"\n"</span>.join(json.dumps(r) <span class="kw">for</span> r <span class="kw">in</span> prediction)
+    <span class="kw">return</span> body, <span class="st">"application/jsonlines"</span></pre>
+      </div>
+    </div>
+
+    <div class="section" id="script-lifecycle">
+      <div class="section-header">
+        <h2>Ciclo de vida do container</h2>
+      </div>
+
+      <div class="lifecycle">
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">1 — Pull e extração</div>
+            <div class="lc-method">DLC pull · tar.gz extraído em /opt/ml/model/</div>
+            <div class="lc-desc">O SageMaker faz pull da DLC (ex: <code>pytorch-inference:2.5.1-gpu-py311</code>). O model.tar.gz é extraído: artefatos do modelo na raiz e scripts em <code>code/</code>.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">2 — Instalação de dependências</div>
+            <div class="lc-method">pip install -r /opt/ml/model/code/requirements.txt</div>
+            <div class="lc-desc">O DLC detecta <code>requirements.txt</code> em <code>code/</code> e instala as dependências. <strong>Isso ocorre a cada cold start</strong> e pode levar de segundos a minutos dependendo dos pacotes.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">3 — Carregamento do modelo</div>
+            <div class="lc-method">model_fn("/opt/ml/model") chamada</div>
+            <div class="lc-desc">O DLC importa <code>inference.py</code> (definido por <code>SAGEMAKER_PROGRAM</code>) e chama <code>model_fn</code>. O retorno é armazenado em memória e repassado para <code>predict_fn</code> em todas as chamadas.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">4 — Inferência (loop)</div>
+            <div class="lc-method">input_fn → predict_fn → output_fn</div>
+            <div class="lc-desc">O Batch Transform envia N requests POST /invocations (MaxConcurrentTransforms em paralelo). Para cada request: <code>input_fn</code> desserializa → <code>predict_fn</code> executa → <code>output_fn</code> serializa a resposta.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">5 — Finalização</div>
+            <div class="lc-method">Container destruído · deps descartadas</div>
+            <div class="lc-desc">Ao fim do job, o container é destruído. As dependências instaladas via pip são descartadas junto — serão reinstaladas no próximo cold start.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>Cold start e pip install:</strong> o <code>pip install</code> ocorre uma única vez
+          por inicialização do container, não por record processado. O custo é pago no começo do job.
+          Para dependências leves (boto3, Pillow), o overhead é de segundos. Para pacotes grandes
+          (onnxruntime, scipy, etc.), pode ser de minutos — nesse caso, considere BYOC.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="script-artifacts">
+      <div class="section-header">
+        <h2>Estrutura do model.tar.gz</h2>
+      </div>
+
+      <div class="tree-block">
+<span class="dir">model_pytorch_script.tar.gz</span>
+├── <span class="file">ResNet18.pth</span>            <span class="ann">← artefatos do modelo na raiz (model_dir)</span>
+└── <span class="dir">code/</span>                    <span class="ann">← detectado automaticamente pelo DLC</span>
+    ├── <span class="file">inference.py</span>        <span class="ann">← script principal (SAGEMAKER_PROGRAM=inference.py)</span>
+    ├── <span class="file">model.py</span>            <span class="ann">← importado por inference.py</span>
+    ├── <span class="file">s3_utils.py</span>         <span class="ann">← importado por inference.py</span>
+    └── <span class="file">requirements.txt</span>    <span class="ann">← instalado pelo DLC antes de chamar model_fn</span>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-lang">Shell</span>
+          <span class="code-title">Empacotar e fazer upload</span>
+        </div>
+        <pre><span class="cm"># Script de empacotamento (scripts/package_pytorch_script.py)</span>
+python scripts/package_pytorch_script.py
+
+<span class="cm"># Upload para S3</span>
+aws s3 cp model_pytorch_script.tar.gz \
+  s3://meu-bucket/models/model_pytorch_script.tar.gz</pre>
+      </div>
+    </div>
+
+    <div class="section" id="script-options">
+      <div class="section-header">
+        <h2>Opções de configuração</h2>
+      </div>
+
+      <h3>Variáveis de ambiente — Script Mode</h3>
+
+      <table class="env-table">
+        <thead>
+          <tr><th>Variável</th><th>Default</th><th>Obrigatório</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="env-key">SAGEMAKER_PROGRAM</td>
+            <td class="env-default">inference.py</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>Nome do arquivo Python dentro de <code>code/</code> que contém as 4 funções. Se não definida, o DLC usa <code>inference.py</code> por convenção.</td>
+          </tr>
+          <tr>
+            <td class="env-key">SAGEMAKER_SUBMIT_DIRECTORY</td>
+            <td class="env-default">/opt/ml/model/code</td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Diretório onde o DLC procura o script. Normalmente não é necessário alterar.</td>
+          </tr>
+          <tr>
+            <td class="env-key">SAGEMAKER_MODEL_SERVER_WORKERS</td>
+            <td class="env-default">1</td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Workers paralelos do servidor interno (Multi-Model Server). Aumentar pode conflitar com MaxConcurrentTransforms.</td>
+          </tr>
+          <tr>
+            <td class="env-key">SAGEMAKER_MODEL_SERVER_TIMEOUT</td>
+            <td class="env-default">60</td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Timeout (segundos) para cada chamada ao container. Aumente se <code>predict_fn</code> fizer downloads lentos.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>create_transform_job — configurações recomendadas para Script Mode</h3>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Parâmetro</th><th>Valor típico</th><th>Observação</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">BatchStrategy</td>
+            <td><span class="val">SingleRecord</span></td>
+            <td>Mais simples: cada linha JSONL vira uma chamada ao container. <code>predict_fn</code> recebe uma lista com 1 item. Use <code>MultiRecord</code> se quiser batching manual em <code>predict_fn</code>.</td>
+          </tr>
+          <tr>
+            <td class="key">MaxConcurrentTransforms</td>
+            <td><span class="val">4–8</span></td>
+            <td>Requests paralelos ao container. Como o servidor interno é síncrono por default, valores altos podem não ajudar sem aumentar <code>SAGEMAKER_MODEL_SERVER_WORKERS</code>.</td>
+          </tr>
+          <tr>
+            <td class="key">MaxPayloadInMB</td>
+            <td><span class="val">1–6</span></td>
+            <td>Com <code>SingleRecord</code> e linhas JSONL pequenas, 1 MB é suficiente.</td>
+          </tr>
+          <tr>
+            <td class="key">SplitType</td>
+            <td><span class="val">Line</span></td>
+            <td>O SageMaker divide o arquivo JSONL por linha antes de enviar ao container.</td>
+          </tr>
+          <tr>
+            <td class="key">AssembleWith</td>
+            <td><span class="val">Line</span></td>
+            <td>O SageMaker concatena as respostas linha a linha no arquivo de saída S3.</td>
+          </tr>
+          <tr>
+            <td class="key">ContentType</td>
+            <td><span class="val">application/json</span></td>
+            <td>Passado como header Content-Type. Verifique o que sua <code>input_fn</code> espera.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section" id="script-deploy">
+      <div class="section-header">
+        <h2>Deploy — passo a passo</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Empacotar model.tar.gz com code/</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span><span class="code-title">scripts/package_pytorch_script.py</span></div>
+              <pre>import tarfile, shutil
+from pathlib import Path
+
+<span class="cm"># Copia model.py para code/ (necessário para import em inference.py)</span>
+shutil.copy(<span class="st">"src/model.py"</span>, <span class="st">"app/pytorch/model.py"</span>)
+
+<span class="kw">with</span> tarfile.open(<span class="st">"model_pytorch_script.tar.gz"</span>, <span class="st">"w:gz"</span>) <span class="kw">as</span> tar:
+    tar.add(<span class="st">"models/ResNet18.pth"</span>, arcname=<span class="st">"ResNet18.pth"</span>)
+    tar.add(<span class="st">"app/pytorch/"</span>, arcname=<span class="st">"code/"</span>)  <span class="cm"># inference.py, s3_utils.py, requirements.txt</span></pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Upload para S3</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre>aws s3 cp model_pytorch_script.tar.gz \
+  s3://meu-bucket/models/model_pytorch_script.tar.gz</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Criar o Model (com SAGEMAKER_PROGRAM)</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre>sm.create_model(
+    ModelName=<span class="st">"resnet18-pytorch-script"</span>,
+    PrimaryContainer={
+        <span class="st">"Image"</span>:        image_uri,   <span class="cm"># DLC obtida com image_uris.retrieve()</span>
+        <span class="st">"ModelDataUrl"</span>: <span class="st">"s3://meu-bucket/models/model_pytorch_script.tar.gz"</span>,
+        <span class="st">"Environment"</span>: {
+            <span class="st">"SAGEMAKER_PROGRAM"</span>: <span class="st">"inference.py"</span>,   <span class="cm"># obrigatório</span>
+        },
+    },
+    ExecutionRoleArn=ROLE_ARN,
+)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Criar o Batch Transform Job</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre>sm.create_transform_job(
+    TransformJobName=<span class="st">"batch-pytorch-script"</span>,
+    ModelName=<span class="st">"resnet18-pytorch-script"</span>,
+    BatchStrategy=<span class="st">"SingleRecord"</span>,
+    MaxConcurrentTransforms=<span class="nm">8</span>,
+    MaxPayloadInMB=<span class="nm">1</span>,
+    TransformInput={
+        <span class="st">"DataSource"</span>: {<span class="st">"S3DataSource"</span>: {
+            <span class="st">"S3DataType"</span>: <span class="st">"S3Prefix"</span>,
+            <span class="st">"S3Uri"</span>:     <span class="st">"s3://meu-bucket/metadata/"</span>,
+        }},
+        <span class="st">"ContentType"</span>: <span class="st">"application/json"</span>,
+        <span class="st">"SplitType"</span>:   <span class="st">"Line"</span>,
+    },
+    TransformOutput={
+        <span class="st">"S3OutputPath"</span>: <span class="st">"s3://meu-bucket/output/"</span>,
+        <span class="st">"AssembleWith"</span>: <span class="st">"Line"</span>,
+    },
+    TransformResources={
+        <span class="st">"InstanceType"</span>:  <span class="st">"ml.g4dn.xlarge"</span>,
+        <span class="st">"InstanceCount"</span>: <span class="nm">1</span>,
+    },
+)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Teste local (sem Docker)</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre><span class="kw">import</span> sys, json
+sys.path.insert(<span class="nm">0</span>, <span class="st">"app/pytorch"</span>)
+<span class="kw">from</span> inference <span class="kw">import</span> model_fn, input_fn, predict_fn, output_fn
+
+<span class="cm"># Simula o que o DLC faz internamente</span>
+model_ctx = model_fn(<span class="st">"models/"</span>)
+data      = input_fn(
+    json.dumps({<span class="st">"record_id"</span>: <span class="st">"t1"</span>, <span class="st">"image_s3_path"</span>: <span class="st">"s3://bucket/img.jpg"</span>}),
+    <span class="st">"application/json"</span>
+)
+result    = predict_fn(data, model_ctx)
+body, ct  = output_fn(result, <span class="st">"application/jsonlines"</span>)
+print(body)  <span class="cm"># {"record_id":"t1","class_name":"cardboard","score":0.999}</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-script -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAB: BYOC
+  ══════════════════════════════════════════════════════════ -->
+  <div id="tab-byoc" class="tab-content">
+
+    <div class="type-banner byoc">
+      <span class="tb-pill">BYOC</span>
+      <span class="tb-desc">Dockerfile próprio, imagem publicada no ECR, servidor HTTP completo (<code>/ping</code> + <code>/invocations</code>) — controle total sobre runtime, dependências e formato de I/O.</span>
+    </div>
+
+    <div class="section" id="byoc-concept">
+      <div class="section-header">
+        <span class="type-pill byoc">BYOC</span>
+        <h2>Bring Your Own Container</h2>
+      </div>
+
+      <p>
+        No modo BYOC você constrói e mantém sua própria imagem Docker, publicada no Amazon ECR.
+        O SageMaker não impõe nenhum framework ou servidor — a única exigência é que o container
+        exponha os endpoints HTTP corretos na porta <strong>8080</strong>.
+      </p>
+      <p>
+        Isso permite usar qualquer stack de serving: FastAPI, Flask, BentoML, NVIDIA Triton,
+        TorchServe customizado, ou até um servidor escrito do zero. As dependências são instaladas
+        na imagem (build time), eliminando o overhead de pip install a cada cold start.
+      </p>
+      <p>
+        <strong>Exemplos neste projeto:</strong>
+      </p>
+      <ul style="margin-left:20px;margin-bottom:16px;font-size:14px">
+        <li><code>app/pt2/</code> — FastAPI + uvicorn servindo um modelo ResNet18 em formato ExportedProgram (.pt2)</li>
+        <li><code>app/onnx/</code> — NVIDIA Triton com ensemble pipeline (preprocess → classifier → postprocess) + proxy Python para adaptar o protocolo KServe v2 ao SageMaker</li>
+        <li><code>app/triton_aws/</code> — DLC AWS sagemaker-tritonserver como imagem base, com boto3 e Pillow instalados via Dockerfile</li>
+      </ul>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vantagens</h4>
+          <ul>
+            <li>Controle total sobre o servidor HTTP e o runtime</li>
+            <li>Dependências baked: cold start rápido</li>
+            <li>Formatos de modelo ilimitados</li>
+            <li>Endpoints extras (/health, /metrics, /execution-parameters)</li>
+            <li>Permite servidores especializados (Triton, TorchServe)</li>
+            <li>Imagem auditável e imutável (compliance)</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Limitações</h4>
+          <ul>
+            <li>Dockerfile, build e push para ECR obrigatórios</li>
+            <li>Rebuild a cada mudança de dependência</li>
+            <li>Você é responsável pelos patches de segurança da imagem</li>
+            <li>Você deve implementar /ping e /invocations corretamente</li>
+            <li>Ciclo de desenvolvimento mais longo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="byoc-contract">
+      <div class="section-header">
+        <h2>Contrato HTTP</h2>
+      </div>
+
+      <p>
+        O SageMaker se comunica com o container via HTTP na porta <strong>8080</strong>.
+        Os dois endpoints obrigatórios são:
+      </p>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Endpoint</th><th>Método</th><th>Obrigatório</th><th>Comportamento esperado</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">/ping</td>
+            <td>GET</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>Retorna <code>HTTP 200</code> quando o modelo está carregado e pronto para inferência. Retorna <code>503</code> enquanto inicializa. O SageMaker usa isso como health check antes de enviar requisições de inferência.</td>
+          </tr>
+          <tr>
+            <td class="key">/invocations</td>
+            <td>POST</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>Recebe o payload do Batch Transform e retorna os resultados. O corpo e o Content-Type são controlados pelas configurações do job (<code>ContentType</code>, <code>SplitType</code>, <code>BatchStrategy</code>).</td>
+          </tr>
+          <tr>
+            <td class="key">/execution-parameters</td>
+            <td>GET</td>
+            <td><span class="required req-n">OPCIONAL</span></td>
+            <td>O container pode sugerir <code>MaxConcurrentTransforms</code>, <code>BatchStrategy</code> e <code>MaxPayloadInMB</code> via JSON. Se implementado, o SageMaker usa esses valores como defaults do job.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-lang">Python</span>
+          <span class="code-title">app/pt2/main.py — FastAPI implementando o contrato</span>
+        </div>
+        <pre><span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Request, Response
+<span class="kw">from</span> contextlib <span class="kw">import</span> asynccontextmanager
+
+@asynccontextmanager
+<span class="kw">async def</span> <span class="fn">lifespan</span>(app):
+    app.state.predictor = Predictor()
+    app.state.predictor.load()   <span class="cm"># carrega o modelo UMA VEZ</span>
+    <span class="kw">yield</span>
+
+app = FastAPI(lifespan=lifespan)
+
+@app.get(<span class="st">"/ping"</span>)
+<span class="kw">def</span> <span class="fn">ping</span>(request: Request):
+    <span class="cm"># 200 = pronto, 503 = não pronto</span>
+    <span class="kw">if not</span> request.app.state.predictor.is_ready():
+        <span class="kw">return</span> Response(status_code=<span class="nm">503</span>)
+    <span class="kw">return</span> Response(status_code=<span class="nm">200</span>)
+
+@app.get(<span class="st">"/execution-parameters"</span>)
+<span class="kw">def</span> <span class="fn">execution_parameters</span>():
+    <span class="cm"># Sugere configurações ao SageMaker</span>
+    <span class="kw">return</span> {
+        <span class="st">"MaxConcurrentTransforms"</span>: <span class="nm">1</span>,
+        <span class="st">"BatchStrategy"</span>:           <span class="st">"MULTI_RECORD"</span>,
+        <span class="st">"MaxPayloadInMB"</span>:          <span class="nm">6</span>,
+    }
+
+@app.post(<span class="st">"/invocations"</span>)
+<span class="kw">async def</span> <span class="fn">invocations</span>(request: Request):
+    body  = <span class="kw">await</span> request.body()
+    lines = [ln <span class="kw">for</span> ln <span class="kw">in</span> body.decode().strip().split(<span class="st">"\n"</span>) <span class="kw">if</span> ln.strip()]
+    results = [predictor.predict(json.loads(ln)) <span class="kw">for</span> ln <span class="kw">in</span> lines]
+    output  = <span class="st">"\n"</span>.join(json.dumps(r) <span class="kw">for</span> r <span class="kw">in</span> results)
+    <span class="kw">return</span> Response(content=output, media_type=<span class="st">"application/jsonlines"</span>)</pre>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>Triton como BYOC:</strong> quando o servidor de inferência é o NVIDIA Triton,
+          o protocolo nativo é o KServe v2, não o SageMaker HTTP. O padrão neste projeto
+          (<code>app/onnx/</code>) é adicionar um proxy Python leve que converte:
+          <code>GET /ping</code> → <code>GET /v2/health/ready</code> e
+          <code>POST /invocations</code> → <code>POST /v2/models/pipeline/infer</code>.
+          A DLC da AWS (<code>sagemaker-tritonserver</code>) já inclui esse proxy embutido,
+          eliminando a necessidade de implementá-lo manualmente.
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="byoc-lifecycle">
+      <div class="section-header">
+        <h2>Ciclo de vida do container</h2>
+      </div>
+
+      <div class="lifecycle">
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">1 — Pull e start</div>
+            <div class="lc-method">docker pull ECR · docker run image serve</div>
+            <div class="lc-desc">O SageMaker faz pull da imagem do ECR e executa o container com o argumento <code>serve</code> (via <code>CMD</code> ou <code>ENTRYPOINT</code> no Dockerfile). O model.tar.gz é extraído em <code>/opt/ml/model/</code>.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">2 — Inicialização do servidor</div>
+            <div class="lc-method">Servidor HTTP sobe na porta 8080</div>
+            <div class="lc-desc">O servidor customizado (FastAPI/uvicorn, Triton, Flask…) inicializa. O modelo é carregado de <code>/opt/ml/model/</code>. Todas as dependências já estão disponíveis (baked na imagem).</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">3 — Health check</div>
+            <div class="lc-method">GET /ping → 200</div>
+            <div class="lc-desc">O SageMaker aguarda <code>/ping</code> retornar 200 antes de iniciar os requests de inferência. Implemente 503 enquanto o modelo não estiver carregado para evitar requests prematuros.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">4 — Inferência (loop)</div>
+            <div class="lc-method">POST /invocations × MaxConcurrentTransforms</div>
+            <div class="lc-desc">O Batch Transform envia requests paralelos. Seu servidor processa e responde. Com <code>MultiRecord</code>, cada request pode conter múltiplos registros. A resposta deve ter o mesmo número de linhas do input.</div>
+          </div>
+        </div>
+        <div class="lc-row"><div class="lc-arrow">↓</div></div>
+        <div class="lc-row">
+          <div class="lc-node">
+            <div class="lc-trigger">5 — Finalização</div>
+            <div class="lc-method">Container destruído</div>
+            <div class="lc-desc">Ao fim do job o container é destruído. Como as dependências estão baked na imagem, não há custo de reinstalação no próximo cold start.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="byoc-artifacts">
+      <div class="section-header">
+        <h2>Artefatos — Dockerfile e model.tar.gz</h2>
+      </div>
+
+      <h3>Exemplo: FastAPI + PyTorch .pt2</h3>
+
+      <div class="tree-block">
+<span class="dir">app/pt2/</span>                  <span class="ann">← contexto do Docker build</span>
+├── <span class="file">Dockerfile</span>
+├── <span class="file">main.py</span>            <span class="ann">← FastAPI: /ping, /invocations, /execution-parameters</span>
+├── <span class="file">predictor.py</span>       <span class="ann">← carrega ResNet18.pt2 e executa inferência</span>
+├── <span class="file">s3_utils.py</span>
+└── <span class="file">requirements.txt</span>
+
+<span class="dir">model_sagemaker/</span>
+└── <span class="file">model_pt2.tar.gz</span>   <span class="ann">← contém apenas ResNet18.pt2 (extraído em /opt/ml/model/)</span>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-lang">Dockerfile</span>
+          <span class="code-title">app/pt2/Dockerfile — multi-stage build</span>
+        </div>
+        <pre><span class="cm"># Stage 1: instala deps com gcc (não vai para a imagem final)</span>
+FROM python:3.11-slim AS builder
+RUN pip install --no-cache-dir \
+    torch==2.8.0 torchvision==0.23.0 \
+    --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir -r requirements.txt
+
+<span class="cm"># Stage 2: runtime leve sem ferramentas de build</span>
+FROM python:3.11-slim AS runtime
+COPY --from=builder /opt/venv /opt/venv
+COPY . .
+EXPOSE 8080
+<span class="cm"># SageMaker chama: docker run &lt;image&gt; serve</span>
+ENTRYPOINT [<span class="st">"python"</span>, <span class="st">"main.py"</span>]</pre>
+      </div>
+
+      <h3>Exemplo: Triton ONNX com proxy (BYOC puro)</h3>
+
+      <div class="tree-block">
+<span class="dir">app/onnx/</span>
+├── <span class="file">Dockerfile</span>          <span class="ann">← FROM nvcr.io/nvidia/tritonserver:24.12-py3</span>
+├── <span class="file">serve</span>               <span class="ann">← entrypoint: inicia Triton + proxy Python</span>
+└── <span class="file">server.py</span>           <span class="ann">← proxy HTTP: /ping e /invocations → Triton KServe v2</span>
+
+<span class="dir">model_sagemaker/</span>
+└── <span class="file">model_onnx.tar.gz</span>   <span class="ann">← model_repository Triton completo (4 modelos: pipeline, preprocess, classifier, postprocess)</span>
+      </div>
+
+      <h3>Exemplo: DLC AWS como base (híbrido — trata como BYOC)</h3>
+
+      <div class="tree-block">
+<span class="dir">app/triton_aws/</span>
+└── <span class="file">Dockerfile</span>          <span class="ann">← FROM 763104351884.dkr.ecr.../sagemaker-tritonserver:24.09-py3</span>
+                        <span class="ann">   + pip install boto3 Pillow (dependências extras do Python backend)</span>
+                        <span class="ann">   Sem serve script — o middleware SageMaker↔Triton já está na imagem base</span>
+      </div>
+    </div>
+
+    <div class="section" id="byoc-options">
+      <div class="section-header">
+        <h2>Opções de configuração</h2>
+      </div>
+
+      <h3>create_model — opções BYOC</h3>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Parâmetro</th><th>Tipo</th><th>Obrigatório</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">PrimaryContainer.Image</td>
+            <td>string</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>URI da imagem no ECR: <code>ACCOUNT.dkr.ecr.REGION.amazonaws.com/repo:tag</code></td>
+          </tr>
+          <tr>
+            <td class="key">PrimaryContainer.ModelDataUrl</td>
+            <td>string</td>
+            <td><span class="required req-o">OPT</span></td>
+            <td>URI do model.tar.gz. Se o modelo está baked na imagem, pode ser omitido.</td>
+          </tr>
+          <tr>
+            <td class="key">PrimaryContainer.Environment</td>
+            <td>dict</td>
+            <td><span class="required req-n">NÃO</span></td>
+            <td>Variáveis de ambiente livres — você define no Dockerfile o que o servidor lê.</td>
+          </tr>
+          <tr>
+            <td class="key">ExecutionRoleArn</td>
+            <td>string</td>
+            <td><span class="required req-y">SIM</span></td>
+            <td>IAM Role com acesso ao S3, ECR e CloudWatch Logs.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Variáveis de ambiente — exemplos deste projeto</h3>
+
+      <table class="env-table">
+        <thead>
+          <tr><th>Variável</th><th>Usado em</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="env-key">SAGEMAKER_TRITON_DEFAULT_MODEL_NAME</td>
+            <td>app/triton_aws · app/onnx</td>
+            <td>Nome do modelo Triton a ser usado como endpoint padrão no <code>/invocations</code>. Normalmente <code>pipeline</code> para ensembles.</td>
+          </tr>
+          <tr>
+            <td class="env-key">ALLOWED_S3_BUCKETS</td>
+            <td>app/onnx · app/triton_aws</td>
+            <td>Buckets S3 permitidos para download de imagens no Python backend do Triton. Separados por vírgula. Fail-closed: sem essa variável, todas as requisições são rejeitadas.</td>
+          </tr>
+          <tr>
+            <td class="env-key">TRITON_MAX_BATCH_SIZE</td>
+            <td>app/onnx (proxy)</td>
+            <td>Tamanho máximo do batch enviado ao Triton em uma única chamada. Default: <code>8</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>create_transform_job — configurações BYOC</h3>
+
+      <table class="opts-table">
+        <thead>
+          <tr><th>Parâmetro</th><th>FastAPI (app/pt2)</th><th>Triton ensemble (app/onnx)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key">BatchStrategy</td>
+            <td><span class="val">MultiRecord</span></td>
+            <td><span class="val">SingleRecord</span></td>
+          </tr>
+          <tr>
+            <td class="key">MaxConcurrentTransforms</td>
+            <td><span class="val">1</span> (via /execution-parameters)</td>
+            <td><span class="val">Definido no job</span></td>
+          </tr>
+          <tr>
+            <td class="key">MaxPayloadInMB</td>
+            <td><span class="val">6</span></td>
+            <td><span class="val">1</span></td>
+          </tr>
+          <tr>
+            <td class="key">SplitType</td>
+            <td><span class="val">Line</span></td>
+            <td><span class="val">Line</span></td>
+          </tr>
+          <tr>
+            <td class="key">ContentType</td>
+            <td><span class="val">application/jsonlines</span></td>
+            <td><span class="val">application/json</span> (KServe v2)</td>
+          </tr>
+          <tr>
+            <td class="key">AssembleWith</td>
+            <td><span class="val">Line</span></td>
+            <td><span class="val">Line</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section" id="byoc-deploy">
+      <div class="section-header">
+        <h2>Deploy — passo a passo</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Autenticar no ECR e fazer build</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre><span class="cm"># Autenticar no ECR próprio</span>
+aws ecr get-login-password --region us-east-1 \
+  | docker login --username AWS --password-stdin \
+    891377318910.dkr.ecr.us-east-1.amazonaws.com
+
+<span class="cm"># (Se usar DLC como base, autenticar também no ECR da AWS)</span>
+aws ecr get-login-password --region us-east-1 \
+  | docker login --username AWS --password-stdin \
+    763104351884.dkr.ecr.us-east-1.amazonaws.com
+
+<span class="cm"># Build da imagem</span>
+docker build -f app/pt2/Dockerfile -t resnet18-pt2 .</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Tag e push para o ECR</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre>ECR_URI="891377318910.dkr.ecr.us-east-1.amazonaws.com/sm-batch-transform-refinamento:latest"
+
+docker tag resnet18-pt2 $ECR_URI
+docker push $ECR_URI</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Empacotar e fazer upload do model.tar.gz</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre><span class="cm"># Apenas o artefato do modelo (servidor já está na imagem)</span>
+tar -czf model_pt2.tar.gz -C model_artifacts ResNet18.pt2
+aws s3 cp model_pt2.tar.gz s3://meu-bucket/models/model_pt2.tar.gz</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Criar o Model com a imagem customizada</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre>sm.create_model(
+    ModelName=<span class="st">"resnet18-byoc-pt2"</span>,
+    PrimaryContainer={
+        <span class="st">"Image"</span>:        <span class="st">"891377318910.dkr.ecr.us-east-1.amazonaws.com/sm-batch-transform-refinamento:latest"</span>,
+        <span class="st">"ModelDataUrl"</span>: <span class="st">"s3://meu-bucket/models/model_pt2.tar.gz"</span>,
+        <span class="cm"># Variáveis de ambiente livres — você define o que seu servidor lê</span>
+        <span class="st">"Environment"</span>: {},
+    },
+    ExecutionRoleArn=ROLE_ARN,
+)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Criar o Batch Transform Job</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Python</span></div>
+              <pre>sm.create_transform_job(
+    TransformJobName=<span class="st">"batch-byoc-pt2"</span>,
+    ModelName=<span class="st">"resnet18-byoc-pt2"</span>,
+    <span class="cm"># Se o container implementa /execution-parameters, esses são sugeridos automaticamente</span>
+    BatchStrategy=<span class="st">"MultiRecord"</span>,
+    MaxConcurrentTransforms=<span class="nm">1</span>,
+    MaxPayloadInMB=<span class="nm">6</span>,
+    TransformInput={
+        <span class="st">"DataSource"</span>: {<span class="st">"S3DataSource"</span>: {
+            <span class="st">"S3DataType"</span>: <span class="st">"S3Prefix"</span>,
+            <span class="st">"S3Uri"</span>:     <span class="st">"s3://meu-bucket/metadata/"</span>,
+        }},
+        <span class="st">"ContentType"</span>: <span class="st">"application/jsonlines"</span>,
+        <span class="st">"SplitType"</span>:   <span class="st">"Line"</span>,
+    },
+    TransformOutput={
+        <span class="st">"S3OutputPath"</span>: <span class="st">"s3://meu-bucket/output/"</span>,
+        <span class="st">"AssembleWith"</span>: <span class="st">"Line"</span>,
+    },
+    TransformResources={
+        <span class="st">"InstanceType"</span>:  <span class="st">"ml.m5.large"</span>,
+        <span class="st">"InstanceCount"</span>: <span class="nm">1</span>,
+    },
+)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h4>Teste local</h4>
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">Shell</span></div>
+              <pre><span class="cm"># Opção A: credenciais via ~/.aws</span>
+docker run --rm -p 8080:8080 \
+  -v "$(pwd)/model_artifacts:/opt/ml/model" \
+  -v "$HOME/.aws:/root/.aws:ro" \
+  -e AWS_DEFAULT_REGION=us-east-1 \
+  resnet18-pt2 serve
+
+<span class="cm"># Opção B: credenciais via variáveis de ambiente</span>
+docker run --rm -p 8080:8080 \
+  -v "$(pwd)/model_artifacts:/opt/ml/model" \
+  -e AWS_ACCESS_KEY_ID \
+  -e AWS_SECRET_ACCESS_KEY \
+  -e AWS_SESSION_TOKEN \
+  -e AWS_DEFAULT_REGION=us-east-1 \
+  resnet18-pt2 serve
+
+<span class="cm"># Health check</span>
+curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8080/ping
+
+<span class="cm"># Inferência</span>
+echo '{"record_id":"t1","image_s3_path":"s3://bucket/img.jpg"}' \
+  | curl -s -X POST http://localhost:8080/invocations \
+         -H "Content-Type: application/jsonlines" \
+         --data-binary @-</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-byoc -->
+
+</main>
+</div><!-- /layout -->
+
+<script>
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function setTab(tabId, link) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const idx = ['overview','dlc','script','byoc'].indexOf(tabId);
+    if (idx >= 0) tabBtns[idx].classList.add('active');
+  }
+
+  /* scrollspy — marca o link ativo conforme a seção visível */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        document.querySelectorAll('nav a').forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  document.querySelectorAll('.section[id]').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
