@@ -1,0 +1,5 @@
+{"record_id": "r0000", "image_s3_path": "s3://mlops-us-east-1-891377318910/sagemaker-batch-transform/refinamento/input/metal5.jpg"}
+{"record_id": "r0001", "image_s3_path": "s3://mlops-us-east-1-891377318910/sagemaker-batch-transform/refinamento/input/cardboard6.jpg"}
+{"record_id": "r0002", "image_s3_path": "s3://mlops-us-east-1-891377318910/sagemaker-batch-transform/refinamento/input/cardboard8.jpg"}
+{"record_id": "r0003", "image_s3_path": "s3://mlops-us-east-1-891377318910/sagemaker-batch-transform/refinamento/input/metal2.jpg"}
+{"record_id": "r0004", "image_s3_path": "s3://mlops-us-east-1-891377318910/sagemaker-batch-transform/refinamento/input/cardboard1.jpg"}

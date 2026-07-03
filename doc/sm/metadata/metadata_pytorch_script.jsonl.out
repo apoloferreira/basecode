@@ -1,0 +1,5 @@
+{"record_id": "r0000", "class_name": "plastic", "score": 0.952835}
+{"record_id": "r0001", "class_name": "paper", "score": 0.999694}
+{"record_id": "r0002", "class_name": "metal", "score": 0.999521}
+{"record_id": "r0003", "class_name": "paper", "score": 0.999848}
+{"record_id": "r0004", "class_name": "trash", "score": 0.999023}

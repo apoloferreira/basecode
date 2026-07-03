@@ -1,0 +1,4 @@
+# Dependências extras além do que já vem na DLC pytorch-inference.
+# PyTorch e torchvision NÃO devem ser listados aqui — já estão na DLC.
+boto3>=1.34
+pillow>=10.0
