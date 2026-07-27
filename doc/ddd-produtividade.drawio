@@ -1,0 +1,758 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36">
+  <diagram name="Página-1" id="zqEsdQkcoY4gszwaV9tw">
+    <mxGraphModel dx="8632" dy="4596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8mPQZxT3K0hxClphjOjt-44" parent="1" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#f5f5f5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontSize=18;fontStyle=1;container=0;fontColor=#333333;" value="4 · RESPONSABILIDADES E OWNERSHIP" vertex="1">
+          <mxGeometry height="720" width="1480" x="8390" y="-240" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-1" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Subdomínios" vertex="1">
+          <mxGeometry height="40" width="240" x="-1400" y="439" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Domínios de negocio" vertex="1">
+          <mxGeometry height="40" width="280" x="-1440" y="399" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-3" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Principal" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="479" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-4" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Genérico" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="519" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-5" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Suporte" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="559" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-6" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Contextos delimitados" vertex="1">
+          <mxGeometry height="40" width="240" x="-1400" y="599" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-7" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Cooperação" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="639" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-8" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Parceria" vertex="1">
+          <mxGeometry height="40" width="160" x="-1320" y="679" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-9" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Núcleo compartilhado" vertex="1">
+          <mxGeometry height="40" width="240" x="-1320" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-10" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Cliente-Fornecedor" vertex="1">
+          <mxGeometry height="40" width="280" x="-1360" y="759" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-11" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Conformista" vertex="1">
+          <mxGeometry height="40" width="240" x="-1320" y="799" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-12" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Camada anticorrupção" vertex="1">
+          <mxGeometry height="40" width="240" x="-1320" y="839" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-13" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Serviço de host aberto" vertex="1">
+          <mxGeometry height="40" width="240" x="-1320" y="879" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-14" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;spacing=0;spacingLeft=5;" value="Caminhos separados" vertex="1">
+          <mxGeometry height="40" width="240" x="-1320" y="919" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-38" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Logica de Negocio" vertex="1">
+          <mxGeometry height="40" width="200" x="-1440" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-40" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Domínio" vertex="1">
+          <mxGeometry height="40" width="360" x="-1480" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-41" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1480" y="999" as="sourcePoint" />
+            <mxPoint x="-1480" y="314" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-42" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1440" y="959" as="sourcePoint" />
+            <mxPoint x="-1441" y="399" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-45" parent="1" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;fillColor=#dae8fc;strokeColor=#6c8ebf;spacingRight=5;" value="Design Tatico -&amp;gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="-1760" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-46" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Script de Transação" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-47" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Registro Ativo" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="1nFGGaxOYqtDlZDGvl8h-75" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=0;spacing=0;spacingLeft=5;" value="Isolar modelos, equipes e responsabilidades" vertex="1">
+          <mxGeometry height="40" width="400" x="-1120" y="599" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-1" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=0;spacing=0;spacingLeft=5;" value="- Padrões para implementação da logica de negocio&lt;div&gt;- Forma de modelar e implementar o código da logica de negocio&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="440" x="-1240" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Logica de Negocio Simple" vertex="1">
+          <mxGeometry height="40" width="280" x="-1400" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-3" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Logica de Negocio Complexa" vertex="1">
+          <mxGeometry height="40" width="320" x="-1400" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-4" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Modelando a Dimensão do Tempo" vertex="1">
+          <mxGeometry height="40" width="360" x="-1440" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-5" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Event Sourcing" vertex="1">
+          <mxGeometry height="40" width="200" x="-1400" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-6" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Padrões de Arquitetura" vertex="1">
+          <mxGeometry height="40" width="320" x="-1440" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-7" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Arquitetura em Camadas" vertex="1">
+          <mxGeometry height="40" width="280" x="-1400" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-8" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Portas e Adaptadores" vertex="1">
+          <mxGeometry height="40" width="280" x="-1400" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-9" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="CQRS" vertex="1">
+          <mxGeometry height="40" width="280" x="-1400" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-10" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Padrões de Comunicação&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="280" x="-1440" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-11" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Saga" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="2000" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-12" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Caixa de Saída&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="1960" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-13" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Integrando Agregados" vertex="1">
+          <mxGeometry height="40" width="240" x="-1400" y="1920" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-14" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Modelo com Estado" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-15" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Modelo sem Estado" vertex="1">
+          <mxGeometry height="40" width="200" x="-1360" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-16" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="Tradução do Modelo" vertex="1">
+          <mxGeometry height="40" width="240" x="-1400" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-17" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1480" y="2040" as="sourcePoint" />
+            <mxPoint x="-1480" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-18" parent="1" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;fillColor=#dae8fc;strokeColor=#6c8ebf;spacingRight=5;" value="Design Estratégico&amp;nbsp; -&amp;gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="-1760" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;rounded=0;spacingLeft=5;spacingRight=5;fontSize=15;fontColor=#333333;" value="Responder:&lt;div&gt;- qual?&lt;/div&gt;&lt;div&gt;- por que?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Qual software estamos construindo e por que estamos construindo&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="260" x="-1760" y="359" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;rounded=0;spacingLeft=5;spacingRight=5;fontSize=15;fontColor=#333333;" value="Responder:&lt;div&gt;- como?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Como cada componente e implementado&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="260" x="-1760" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-22" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="Escopo:&amp;nbsp;&lt;span style=&quot;font-weight: normal;&quot;&gt;Para este trabalho de descoberta, estamos tratando a gestão de informações de uso do solo como o domínio em análise. Sendo o escopo de produto ou plataforma.&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Problema:&lt;span style=&quot;font-weight: normal;&quot;&gt; Não temos uma informação centralizada e consolidada do uso do solo de correntistas e não correntistas, dificultando a domada de decisão e analises dos indivíduos e consequentemente na gestão de credito levando em consideração a terra.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Domínio da iniciativa:&lt;span style=&quot;font-weight: normal;&quot;&gt; Gestão de Informações de Uso do Solo para decisões de negocio&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="960" x="560" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-24" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Escopo&lt;/th&gt;&lt;th&gt;&amp;nbsp;|&amp;nbsp; Possível domínio analisado&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Instituição&lt;/td&gt;&lt;td&gt;&amp;nbsp;|&amp;nbsp; Serviços financeiros&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Unidade de negócio&lt;/td&gt;&lt;td&gt;&amp;nbsp;|&amp;nbsp; Agronegócio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Produto ou plataforma&lt;/td&gt;&lt;td&gt;&amp;nbsp;|&amp;nbsp; Birô de uso do solo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Capacidade específica&lt;/td&gt;&lt;td&gt;&amp;nbsp;|&amp;nbsp; Classificação e consolidação de uso do solo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Implementação técnica&lt;/td&gt;&lt;td&gt;&amp;nbsp;|&amp;nbsp; Modelos de ML, pipelines, APIs e bancos&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="120" width="400" x="1760" y="-400" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-26" parent="1" style="text;whiteSpace=wrap;html=1;" value="ML poderia ser um domínio de negócio caso a empresa comercializasse modelos ou uma plataforma de ML como produto. No seu cenário, parece ser principalmente um mecanismo usado pelo domínio." vertex="1">
+          <mxGeometry height="40" width="560" x="1760" y="-280" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-38" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-39" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-40" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-41" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-42" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-43" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;" value="Gestão de Informações de Uso do Solo" vertex="1">
+          <mxGeometry height="60" width="240" x="3040" y="2840" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Aquisição de dados externos" vertex="1">
+          <mxGeometry height="60" width="240" x="2280" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Consolidação territorial" vertex="1">
+          <mxGeometry height="60" width="240" x="2560" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Classificação do uso do solo" vertex="1">
+          <mxGeometry height="60" width="240" x="2840" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Qualidade e proveniência&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="3120" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-44" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-45" edge="1" parent="1" source="fM1tTdFUm4pOwlo0JNWG-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="fM1tTdFUm4pOwlo0JNWG-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Disponibilização de dados" vertex="1">
+          <mxGeometry height="60" width="240" x="3400" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Consultas transacionais" vertex="1">
+          <mxGeometry height="60" width="200" x="3310" y="3100" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Consumo analítico&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="200" x="3530" y="3100" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Consumo para decisões&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="3680" y="2980" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-46" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;li data-section-id=&quot;19nj0qd&quot; data-start=&quot;5723&quot; data-end=&quot;5789&quot;&gt;&lt;strong data-start=&quot;5725&quot; data-end=&quot;5751&quot;&gt;Domínio da iniciativa:&lt;/strong&gt; gestão de informações de uso do solo.&lt;/li&gt;&lt;li data-section-id=&quot;v3lhzh&quot; data-start=&quot;5790&quot; data-end=&quot;5901&quot;&gt;&lt;strong data-start=&quot;5792&quot; data-end=&quot;5818&quot;&gt;Core Domain candidato:&lt;/strong&gt; consolidação e interpretação proprietária do uso do solo para decisões de negócio.&lt;/li&gt;&lt;li data-section-id=&quot;1m8edal&quot; data-start=&quot;5902&quot; data-end=&quot;6014&quot;&gt;&lt;strong data-start=&quot;5904&quot; data-end=&quot;5941&quot;&gt;Supporting Subdomains candidatos:&lt;/strong&gt; aquisição de fontes externas, publicação e atendimento aos consumidores.&lt;/li&gt;&lt;li data-section-id=&quot;1pt92ym&quot; data-start=&quot;6015&quot; data-end=&quot;6113&quot;&gt;&lt;strong data-start=&quot;6017&quot; data-end=&quot;6051&quot;&gt;Generic Subdomains candidatos:&lt;/strong&gt;&amp;nbsp;observabilidade, infraestrutura e orquestração.&lt;/li&gt;&lt;li data-section-id=&quot;52u3dn&quot; data-start=&quot;6114&quot; data-end=&quot;6241&quot;&gt;&lt;strong data-start=&quot;6116&quot; data-end=&quot;6137&quot;&gt;Machine Learning:&lt;/strong&gt; mecanismo técnico dentro de um ou mais Bounded Contexts, principalmente o de classificação territorial.&lt;/li&gt;" vertex="1">
+          <mxGeometry height="80" width="680" x="1760" y="-240" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-48" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;table data-start=&quot;168&quot; data-end=&quot;564&quot; class=&quot;w-fit min-w-(--thread-content-width)&quot;&gt;&lt;thead data-start=&quot;168&quot; data-end=&quot;218&quot;&gt;&lt;tr data-start=&quot;168&quot; data-end=&quot;218&quot;&gt;&lt;th data-start=&quot;168&quot; data-end=&quot;185&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;Termo português&amp;nbsp;&lt;/th&gt;&lt;th data-start=&quot;185&quot; data-end=&quot;203&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp; Termo em inglês&lt;/th&gt;&lt;th data-start=&quot;203&quot; data-end=&quot;218&quot; data-col-size=&quot;md&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp; Significado&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody data-start=&quot;233&quot; data-end=&quot;564&quot;&gt;&lt;tr data-start=&quot;233&quot; data-end=&quot;311&quot;&gt;&lt;td data-start=&quot;233&quot; data-end=&quot;256&quot; data-col-size=&quot;sm&quot;&gt;Subdomínio principal&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;256&quot; data-end=&quot;273&quot;&gt;&amp;nbsp; Core subdomain&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;273&quot; data-end=&quot;311&quot;&gt;&amp;nbsp; Diferencial estratégico do negócio&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;312&quot; data-end=&quot;429&quot;&gt;&lt;td data-start=&quot;312&quot; data-end=&quot;336&quot; data-col-size=&quot;sm&quot;&gt;Subdomínio de suporte&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;336&quot; data-end=&quot;359&quot;&gt;&amp;nbsp; Supporting subdomain&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;359&quot; data-end=&quot;429&quot;&gt;&amp;nbsp; Capacidade específica necessária, mas que não diferencia o negócio&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;430&quot; data-end=&quot;564&quot;&gt;&lt;td data-start=&quot;430&quot; data-end=&quot;452&quot; data-col-size=&quot;sm&quot;&gt;Subdomínio genérico&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;452&quot; data-end=&quot;472&quot;&gt;&amp;nbsp; Generic subdomain&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;472&quot; data-end=&quot;564&quot;&gt;&amp;nbsp; Problema comum a várias empresas, normalmente resolvido por produto ou solução existente&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="80" width="800" x="1760" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-49" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;li data-section-id=&quot;1apqp2m&quot; data-start=&quot;603&quot; data-end=&quot;664&quot;&gt;&lt;strong data-start=&quot;605&quot; data-end=&quot;616&quot;&gt;Domínio&lt;/strong&gt;: área ampla do negócio que está sendo estudada.&lt;/li&gt;&lt;li data-section-id=&quot;1kebsou&quot; data-start=&quot;665&quot; data-end=&quot;709&quot;&gt;&lt;strong data-start=&quot;667&quot; data-end=&quot;682&quot;&gt;Subdomínios&lt;/strong&gt;: decomposições dessa área.&lt;/li&gt;&lt;li data-section-id=&quot;soo3v5&quot; data-start=&quot;710&quot; data-end=&quot;788&quot;&gt;&lt;strong data-start=&quot;712&quot; data-end=&quot;736&quot;&gt;Subdomínio principal&lt;/strong&gt;: o subdomínio que produz diferenciação estratégica.&lt;/li&gt;" vertex="1">
+          <mxGeometry height="70" width="440" x="1760" y="-140" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-50" parent="1" style="text;whiteSpace=wrap;html=1;" value="Domínio: Gestão de informações de uso do solo&#xa;&#xa;├── Principal: consolidação e interpretação territorial proprietária&#xa;├── Suporte: integração com fornecedores de dados&#xa;├── Suporte: gestão da qualidade e proveniência&#xa;└── Genérico: autenticação, observabilidade e armazenamento" vertex="1">
+          <mxGeometry height="110" width="380" x="1760" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="fM1tTdFUm4pOwlo0JNWG-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;p data-start=&quot;1986&quot; data-end=&quot;2119&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot; style=&quot;text-align: left;&quot;&gt;Além disso, “modelo de ML”, “API” ou “pipeline” normalmente não são subdomínios. São soluções técnicas.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;O subdomínio seria algo como:&lt;/span&gt;&lt;/p&gt;&lt;ul data-start=&quot;2121&quot; data-end=&quot;2266&quot; style=&quot;text-align: left;&quot;&gt;&lt;li data-section-id=&quot;y6d6my&quot; data-start=&quot;2121&quot; data-end=&quot;2148&quot;&gt;determinar o uso do solo;&lt;/li&gt;&lt;li data-section-id=&quot;bdo02i&quot; data-start=&quot;2149&quot; data-end=&quot;2185&quot;&gt;consolidar a situação territorial;&lt;/li&gt;&lt;li data-section-id=&quot;18eehd7&quot; data-start=&quot;2186&quot; data-end=&quot;2220&quot;&gt;detectar mudanças no território;&lt;/li&gt;&lt;li data-section-id=&quot;noj4d8&quot; data-start=&quot;2221&quot; data-end=&quot;2266&quot;&gt;fornecer evidências para decisões de risco.&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="110" width="460" x="1760" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-1" parent="1" style="text;whiteSpace=wrap;html=1;" value="Onde está a diferenciação do negócio e onde devemos concentrar investimento, especialistas e complexidade?" vertex="1">
+          <mxGeometry height="40" width="640" x="1760" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-2" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;table data-start=&quot;2833&quot; data-end=&quot;3147&quot; class=&quot;w-fit min-w-(--thread-content-width)&quot;&gt;&lt;thead data-start=&quot;2833&quot; data-end=&quot;2885&quot;&gt;&lt;tr data-start=&quot;2833&quot; data-end=&quot;2885&quot;&gt;&lt;th data-start=&quot;2833&quot; data-end=&quot;2857&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;Capacidade de negócio&lt;/th&gt;&lt;th data-start=&quot;2857&quot; data-end=&quot;2885&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp; |&amp;nbsp; Solução técnica possível&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody data-start=&quot;2896&quot; data-end=&quot;3147&quot;&gt;&lt;tr data-start=&quot;2896&quot; data-end=&quot;2939&quot;&gt;&lt;td data-start=&quot;2896&quot; data-end=&quot;2923&quot; data-col-size=&quot;sm&quot;&gt;Determinar o uso do solo&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;2923&quot; data-end=&quot;2939&quot;&gt;&amp;nbsp; |&amp;nbsp; Modelo de ML&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;2940&quot; data-end=&quot;2995&quot;&gt;&lt;td data-start=&quot;2940&quot; data-end=&quot;2971&quot; data-col-size=&quot;sm&quot;&gt;Receber informações externas&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;2971&quot; data-end=&quot;2995&quot;&gt;&amp;nbsp; |&amp;nbsp; Pipeline de ingestão&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;2996&quot; data-end=&quot;3036&quot;&gt;&lt;td data-start=&quot;2996&quot; data-end=&quot;3029&quot; data-col-size=&quot;sm&quot;&gt;Consultar situação territorial&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;3029&quot; data-end=&quot;3036&quot;&gt;&amp;nbsp; |&amp;nbsp; API&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;3037&quot; data-end=&quot;3100&quot;&gt;&lt;td data-start=&quot;3037&quot; data-end=&quot;3068&quot; data-col-size=&quot;sm&quot;&gt;Manter histórico territorial&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;3068&quot; data-end=&quot;3100&quot;&gt;&amp;nbsp; |&amp;nbsp; Banco histórico ou data lake&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;3101&quot; data-end=&quot;3147&quot;&gt;&lt;td data-start=&quot;3101&quot; data-end=&quot;3128&quot; data-col-size=&quot;sm&quot;&gt;Identificar divergências&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;3128&quot; data-end=&quot;3147&quot;&gt;&amp;nbsp; |&amp;nbsp; Motor de regras&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="120" width="360" x="2180" y="-400" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-3" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="&lt;div&gt;Produtividade Agropecuária&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Subdomínios:&amp;nbsp;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Observação territorial por sensoriamento remoto&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Analise de imagens geoespaciais&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Delimitação de áreas cultivares&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Identificação de culturas agricolas&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Monitoramento do ciclo produtivo&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Histórico produtivo agricola&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Estimativa de produtividade agrícola&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="480" x="1750" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-4" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Agro&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Dados e Distribuição&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Produtividade Agropecuária&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Inteligencia da Propriedade&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Jornada de Dados&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="920" x="560" y="379" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-5" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;table data-start=&quot;666&quot; data-end=&quot;1341&quot; class=&quot;w-fit min-w-(--thread-content-width)&quot;&gt;&lt;thead data-start=&quot;666&quot; data-end=&quot;737&quot;&gt;&lt;tr data-start=&quot;666&quot; data-end=&quot;737&quot;&gt;&lt;th data-start=&quot;666&quot; data-end=&quot;697&quot; data-col-size=&quot;md&quot; class=&quot;last:pe-10&quot;&gt;Entrega ou mecanismo técnico&lt;/th&gt;&lt;th data-start=&quot;697&quot; data-end=&quot;737&quot; data-col-size=&quot;md&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp;|&amp;nbsp; Capacidade de negócio correspondente&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody data-start=&quot;748&quot; data-end=&quot;1341&quot;&gt;&lt;tr data-start=&quot;846&quot; data-end=&quot;920&quot;&gt;&lt;td data-start=&quot;846&quot; data-end=&quot;880&quot; data-col-size=&quot;md&quot;&gt;Ingestão de imagens de satélite&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;880&quot; data-end=&quot;920&quot;&gt;&amp;nbsp;|&amp;nbsp; Observar periodicamente o território&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;921&quot; data-end=&quot;1000&quot;&gt;&lt;td data-start=&quot;921&quot; data-end=&quot;946&quot; data-col-size=&quot;md&quot;&gt;Segmentação de imagens&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;946&quot; data-end=&quot;1000&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Delimitar áreas cultiváveis ou unidades produtivas&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1001&quot; data-end=&quot;1098&quot;&gt;&lt;td data-start=&quot;1001&quot; data-end=&quot;1050&quot; data-col-size=&quot;md&quot;&gt;Classificação de soja, milho e outras culturas&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1050&quot; data-end=&quot;1098&quot;&gt;&amp;nbsp;|&amp;nbsp; Identificar a cultura existente em cada área&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1099&quot; data-end=&quot;1181&quot;&gt;&lt;td data-start=&quot;1099&quot; data-end=&quot;1137&quot; data-col-size=&quot;md&quot;&gt;Identificação de plantio e colheita&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1137&quot; data-end=&quot;1181&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Determinar o ciclo produtivo de uma área&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1182&quot; data-end=&quot;1268&quot;&gt;&lt;td data-start=&quot;1182&quot; data-end=&quot;1222&quot; data-col-size=&quot;md&quot;&gt;Consolidação temporal das informações&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1222&quot; data-end=&quot;1268&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Construir o histórico produtivo das safras&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1269&quot; data-end=&quot;1341&quot;&gt;&lt;td data-start=&quot;1269&quot; data-end=&quot;1295&quot; data-col-size=&quot;md&quot;&gt;Modelo de produtividade&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1295&quot; data-end=&quot;1341&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Estimar produtividade ou produção agrícola&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="140" width="560" x="1750" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-6" parent="1" style="text;whiteSpace=wrap;html=1;" value="Domínio: Agronegócio&lt;br&gt;&lt;br&gt;Subdomínio principal:&lt;br&gt;└── Produtividade Agropecuária&amp;nbsp;&lt;br&gt;    &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;├── Monitoramento de safras&lt;br&gt;    &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;├── Histórico produtivo&lt;br&gt;    &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;└── Estimativa de produtividade&lt;br&gt;&lt;br&gt;Subdomínios de suporte candidatos:&lt;br&gt;├── Observação territorial por sensoriamento remoto&lt;br&gt;├── Delimitação de áreas cultiváveis&lt;br&gt;└── Identificação de culturas&lt;br&gt;&lt;br&gt;Capacidades técnicas:&lt;br&gt;├── Ingestão de imagens&lt;br&gt;├── Modelos de ML&lt;br&gt;├── Pipelines de dados&lt;br&gt;├── Armazenamento&lt;br&gt;└── Processamento geoespacial" vertex="1">
+          <mxGeometry height="320" width="320" x="2270" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-8" parent="1" style="text;whiteSpace=wrap;html=1;" value="O subdomínio principal da squad é &lt;strong data-start=&quot;9532&quot; data-end=&quot;9567&quot;&gt;Produtividade Agropecuária&lt;/strong&gt;, cuja finalidade é construir conhecimento sobre onde, o que, quando e quanto é produzido em uma área agrícola." vertex="1">
+          <mxGeometry height="40" width="760" x="1750" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-9" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;table data-start=&quot;9742&quot; data-end=&quot;10035&quot; class=&quot;w-fit min-w-(--thread-content-width)&quot;&gt;&lt;thead data-start=&quot;9742&quot; data-end=&quot;9767&quot;&gt;&lt;tr data-start=&quot;9742&quot; data-end=&quot;9767&quot;&gt;&lt;th data-start=&quot;9742&quot; data-end=&quot;9753&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;Pergunta&lt;/th&gt;&lt;th data-start=&quot;9753&quot; data-end=&quot;9767&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp;|&amp;nbsp; Capacidade&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody data-start=&quot;9778&quot; data-end=&quot;10035&quot;&gt;&lt;tr data-start=&quot;9778&quot; data-end=&quot;9838&quot;&gt;&lt;td data-start=&quot;9778&quot; data-end=&quot;9802&quot; data-col-size=&quot;sm&quot;&gt;Onde existe produção?&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;9802&quot; data-end=&quot;9838&quot;&gt;&amp;nbsp;|&amp;nbsp; Delimitação de áreas cultiváveis&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;9839&quot; data-end=&quot;9897&quot;&gt;&lt;td data-start=&quot;9839&quot; data-end=&quot;9869&quot; data-col-size=&quot;sm&quot;&gt;O que está sendo produzido?&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;9869&quot; data-end=&quot;9897&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Identificação da cultura&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;9898&quot; data-end=&quot;9960&quot;&gt;&lt;td data-start=&quot;9898&quot; data-end=&quot;9934&quot; data-col-size=&quot;sm&quot;&gt;Quando ocorreu o ciclo produtivo?&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;9934&quot; data-end=&quot;9960&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Monitoramento da safra&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;9961&quot; data-end=&quot;10035&quot;&gt;&lt;td data-start=&quot;9961&quot; data-end=&quot;9993&quot; data-col-size=&quot;sm&quot;&gt;Quanto será ou foi produzido?&lt;/td&gt;&lt;td data-col-size=&quot;sm&quot; data-start=&quot;9993&quot; data-end=&quot;10035&quot;&gt;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Estimativa de produtividade e produção&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="100" width="430" x="1750" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-10" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Subdomínio princiapal:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt; Gestão da informação do uso do solo&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Subdomínio de suporte:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- aquisição, ingestão e integração de dados de fontes externas&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;publicação e disponibilização aos consumidores.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Subdomínio genérico:&lt;span style=&quot;font-weight: 400;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- infraestrutura&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- orquestração&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- observabilidade.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="980" x="560" y="839" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-11" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Domínio core:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt; Consolidação e interpretação do uso do solo para decisões de negocio&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Subdomínio de suporte:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;aquisição e ingestão de dados de fontes externas,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;publicação e disponibilização aos consumidores.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Subdomínio genérico:&lt;span style=&quot;font-weight: 400;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- infraestrutura&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- orquestração&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- observabilidade.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="980" x="1750" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;verticalAlign=top;spacingTop=0;arcSize=8;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="CONTEXTO DELIMITADO&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); text-align: left;&quot;&gt;Produtividade Agropecuária&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="320" x="600" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;spacingTop=0;arcSize=8;fontColor=#333333;" value="CONTEXTO DELIMITADO&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Gestão do Biro de Uso do Solo&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="320" x="1000" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-17" parent="1" style="text;whiteSpace=wrap;html=1;spacingLeft=3;spacingRight=3;" value="&lt;p data-start=&quot;244&quot; data-end=&quot;337&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot;&gt;O motivo principal é que eles possuem objetivos, modelos, regras e ciclos de vida diferentes:&lt;/p&gt;&lt;ul data-start=&quot;339&quot; data-end=&quot;509&quot;&gt;&lt;li data-section-id=&quot;ropbxe&quot; data-start=&quot;339&quot; data-end=&quot;408&quot;&gt;&lt;strong data-start=&quot;341&quot; data-end=&quot;356&quot;&gt;Uso do Solo&lt;/strong&gt; responde: “Como o território está sendo utilizado?”&lt;/li&gt;&lt;li data-section-id=&quot;1xj2x9k&quot; data-start=&quot;409&quot; data-end=&quot;509&quot;&gt;&lt;strong data-start=&quot;411&quot; data-end=&quot;441&quot;&gt;Produtividade Agropecuária&lt;/strong&gt; responde: “O que, quando e quanto é produzido nas áreas agrícolas?”&lt;/li&gt;&lt;/ul&gt;&lt;p data-start=&quot;511&quot; data-end=&quot;630&quot;&gt;Eles se relacionam fortemente, mas relacionamento forte não significa que devam compartilhar o mesmo modelo de domínio.&lt;/p&gt;&lt;h2 data-section-id=&quot;12g4yxy&quot; data-start=&quot;632&quot; data-end=&quot;657&quot;&gt;Comparação dos modelos&lt;/h2&gt;&lt;div class=&quot;TyagGW_tableContainer&quot;&gt;&lt;div tabindex=&quot;-1&quot; class=&quot;group TyagGW_tableWrapper flex flex-col-reverse w-fit&quot;&gt;&lt;table data-start=&quot;659&quot; data-end=&quot;1695&quot; class=&quot;w-fit min-w-(--thread-content-width)&quot;&gt;&lt;thead data-start=&quot;659&quot; data-end=&quot;723&quot;&gt;&lt;tr data-start=&quot;659&quot; data-end=&quot;723&quot;&gt;&lt;th data-start=&quot;659&quot; data-end=&quot;669&quot; data-col-size=&quot;sm&quot; class=&quot;last:pe-10&quot;&gt;Aspecto&lt;/th&gt;&lt;th data-start=&quot;669&quot; data-end=&quot;693&quot; data-col-size=&quot;md&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp;Gestão do Uso do Solo&lt;/th&gt;&lt;th data-start=&quot;693&quot; data-end=&quot;723&quot; data-col-size=&quot;md&quot; class=&quot;last:pe-10&quot;&gt;&amp;nbsp;Produtividade Agropecuária&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody data-start=&quot;738&quot; data-end=&quot;1695&quot;&gt;&lt;tr data-start=&quot;738&quot; data-end=&quot;844&quot;&gt;&lt;td data-start=&quot;738&quot; data-end=&quot;749&quot; data-col-size=&quot;sm&quot;&gt;Objetivo&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;749&quot; data-end=&quot;800&quot;&gt;&amp;nbsp;Consolidar a ocupação e utilização do território&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;800&quot; data-end=&quot;844&quot;&gt;&amp;nbsp;Acompanhar e estimar a produção agrícola&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;845&quot; data-end=&quot;955&quot;&gt;&lt;td data-start=&quot;845&quot; data-end=&quot;863&quot; data-col-size=&quot;sm&quot;&gt;Unidade central&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;863&quot; data-end=&quot;908&quot;&gt;&amp;nbsp;Área territorial ou parcela de uso do solo&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;908&quot; data-end=&quot;955&quot;&gt;&amp;nbsp;Área cultivada, talhão ou unidade produtiva&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;956&quot; data-end=&quot;1041&quot;&gt;&lt;td data-start=&quot;956&quot; data-end=&quot;976&quot; data-col-size=&quot;sm&quot;&gt;Dimensão temporal&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;976&quot; data-end=&quot;1015&quot;&gt;&amp;nbsp;Data da observação e vigência do uso&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1015&quot; data-end=&quot;1041&quot;&gt;&amp;nbsp;Ciclo agrícola e safra&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1042&quot; data-end=&quot;1178&quot;&gt;&lt;td data-start=&quot;1042&quot; data-end=&quot;1059&quot; data-col-size=&quot;sm&quot;&gt;Classificações&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1059&quot; data-end=&quot;1125&quot;&gt;&amp;nbsp;Agricultura, pastagem, vegetação nativa, água, área urbana etc.&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1125&quot; data-end=&quot;1178&quot;&gt;&amp;nbsp;Soja, milho, algodão, cultura, plantio e colheita&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1179&quot; data-end=&quot;1253&quot;&gt;&lt;td data-start=&quot;1179&quot; data-end=&quot;1191&quot; data-col-size=&quot;sm&quot;&gt;Resultado&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1191&quot; data-end=&quot;1217&quot;&gt;&amp;nbsp;Uso do solo consolidado&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1217&quot; data-end=&quot;1253&quot;&gt;&amp;nbsp;Histórico e estimativa produtiva&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1254&quot; data-end=&quot;1394&quot;&gt;&lt;td data-start=&quot;1254&quot; data-end=&quot;1269&quot; data-col-size=&quot;sm&quot;&gt;Consumidores&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1269&quot; data-end=&quot;1325&quot;&gt;&amp;nbsp;Crédito, risco, socioambiental, compliance, analytics&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1325&quot; data-end=&quot;1394&quot;&gt;&amp;nbsp;Crédito agro, planejamento, acompanhamento e previsão de produção&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1395&quot; data-end=&quot;1552&quot;&gt;&lt;td data-start=&quot;1395&quot; data-end=&quot;1416&quot; data-col-size=&quot;sm&quot;&gt;Regras importantes&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1416&quot; data-end=&quot;1491&quot;&gt;&amp;nbsp;Proveniência, conflito entre fontes, validade, cobertura e versionamento&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1491&quot; data-end=&quot;1552&quot;&gt;&amp;nbsp;Safra, cultura, ciclo produtivo, produtividade e produção&lt;/td&gt;&lt;/tr&gt;&lt;tr data-start=&quot;1553&quot; data-end=&quot;1695&quot;&gt;&lt;td data-start=&quot;1553&quot; data-end=&quot;1575&quot; data-col-size=&quot;sm&quot;&gt;Linguagem principal&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1575&quot; data-end=&quot;1632&quot;&gt;&amp;nbsp;Uso, cobertura, ocupação, fonte, observação e vigência&lt;/td&gt;&lt;td data-col-size=&quot;md&quot; data-start=&quot;1632&quot; data-end=&quot;1695&quot;&gt;&amp;nbsp;Cultura, safra, plantio, colheita, produtividade e produção&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="360" width="900" x="2330" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-22" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Produtividade Agropecuária&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="2320" y="2400" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-23" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Empresas Terceiras" vertex="1">
+          <mxGeometry height="60" width="240" x="2320" y="2580" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-24" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Serasa" vertex="1">
+          <mxGeometry height="60" width="240" x="2320" y="2670" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-26" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9io1BMaQ7AhXAmXuntyE-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-27" connectable="0" parent="9io1BMaQ7AhXAmXuntyE-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="Visão Institucional" vertex="1">
+          <mxGeometry relative="1" x="-0.0063" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Biro&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="160" x="2760" y="2520" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Consumidores" vertex="1">
+          <mxGeometry height="60" width="160" x="3080" y="2520" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-28" parent="1" style="text;whiteSpace=wrap;html=1;spacingLeft=3;" value="Produtividade Agropecuária produz informações especializadas; o Birô recebe, governa, consolida e distribui essas informações como uma visão institucional da propriedade rural." vertex="1">
+          <mxGeometry height="80" width="320" x="600" y="2120" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-30" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" target="9io1BMaQ7AhXAmXuntyE-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="Inteligencia da Propriedade&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="2320" y="2490" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-31" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;h3 data-section-id=&quot;1od8lse&quot; data-start=&quot;908&quot; data-end=&quot;950&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot;&gt;Contexto de Produtividade Agropecuária&lt;/h3&gt;&lt;p data-start=&quot;952&quot; data-end=&quot;1027&quot;&gt;É responsável por produzir e explicar as informações geradas pelos modelos:&lt;/p&gt;&lt;ul data-start=&quot;1029&quot; data-end=&quot;1331&quot;&gt;&lt;li data-section-id=&quot;1rvf4k1&quot; data-start=&quot;1029&quot; data-end=&quot;1064&quot;&gt;delimitação de áreas cultiváveis;&lt;/li&gt;&lt;li data-section-id=&quot;1rxz3pw&quot; data-start=&quot;1065&quot; data-end=&quot;1093&quot;&gt;identificação de culturas;&lt;/li&gt;&lt;li data-section-id=&quot;1e4ruxm&quot; data-start=&quot;1094&quot; data-end=&quot;1132&quot;&gt;identificação de plantio e colheita;&lt;/li&gt;&lt;li data-section-id=&quot;11yckex&quot; data-start=&quot;1133&quot; data-end=&quot;1159&quot;&gt;caracterização da safra;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;17sl6rp&quot; data-start=&quot;1160&quot; data-end=&quot;1190&quot;&gt;estimativa de produtividade;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1ei93jc&quot; data-start=&quot;1191&quot; data-end=&quot;1216&quot;&gt;estimativa de produção;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1cttlqi&quot; data-start=&quot;1217&quot; data-end=&quot;1238&quot;&gt;nível de confiança;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;rx3pxi&quot; data-start=&quot;1239&quot; data-end=&quot;1258&quot;&gt;versão do modelo;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;jlk1n8&quot; data-start=&quot;1259&quot; data-end=&quot;1290&quot;&gt;data e período da inferência;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;g0y7ts&quot; data-start=&quot;1291&quot; data-end=&quot;1331&quot;&gt;revisão ou cancelamento de resultados.&lt;/li&gt;&lt;/ul&gt;&lt;p data-start=&quot;1333&quot; data-end=&quot;1378&quot;&gt;Ele possui a autoridade sobre perguntas como:&lt;/p&gt;&lt;ul data-start=&quot;1380&quot; data-end=&quot;1635&quot;&gt;&lt;li data-section-id=&quot;188ysgu&quot; data-start=&quot;1380&quot; data-end=&quot;1416&quot;&gt;Qual modelo produziu a informação?&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1hxdnub&quot; data-start=&quot;1417&quot; data-end=&quot;1445&quot;&gt;Qual versão foi utilizada?&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1jzas9c&quot; data-start=&quot;1446&quot; data-end=&quot;1479&quot;&gt;Quais dados foram considerados?&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;vuucog&quot; data-start=&quot;1480&quot; data-end=&quot;1513&quot;&gt;Qual é a confiança da previsão?&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;uc0kus&quot; data-start=&quot;1514&quot; data-end=&quot;1566&quot;&gt;A estimativa foi substituída por uma mais recente?&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1k7cerw&quot; data-start=&quot;1567&quot; data-end=&quot;1635&quot;&gt;A informação representa uma observação, classificação ou previsão?&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="360" width="440" x="560" y="2240" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-32" parent="1" style="text;whiteSpace=wrap;html=1;spacingLeft=3;" value="&lt;h3 data-section-id=&quot;1hw5vhs&quot; data-start=&quot;1716&quot; data-end=&quot;1736&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot;&gt;Contexto do Birô&lt;/h3&gt;&lt;p data-start=&quot;1738&quot; data-end=&quot;1820&quot;&gt;É responsável por transformar informações heterogêneas em uma visão institucional:&lt;/p&gt;&lt;ul data-start=&quot;1822&quot; data-end=&quot;2288&quot;&gt;&lt;br&gt;&lt;li data-section-id=&quot;1r9ixz8&quot; data-start=&quot;1822&quot; data-end=&quot;1865&quot;&gt;identificar a propriedade correspondente;&lt;/li&gt;&lt;li data-section-id=&quot;1lxka01&quot; data-start=&quot;1866&quot; data-end=&quot;1914&quot;&gt;relacionar informações a uma geometria válida;&lt;/li&gt;&lt;li data-section-id=&quot;arvgky&quot; data-start=&quot;1915&quot; data-end=&quot;1958&quot;&gt;receber informações de diferentes fontes;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;11cwicg&quot; data-start=&quot;1959&quot; data-end=&quot;2000&quot;&gt;validar contratos e requisitos mínimos;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1la9t9t&quot; data-start=&quot;2001&quot; data-end=&quot;2026&quot;&gt;controlar proveniência;&lt;/li&gt;&lt;li data-section-id=&quot;1rpoejr&quot; data-start=&quot;2027&quot; data-end=&quot;2064&quot;&gt;resolver ou registrar divergências;&lt;/li&gt;&lt;li data-section-id=&quot;pg5w33&quot; data-start=&quot;2065&quot; data-end=&quot;2100&quot;&gt;definir precedência entre fontes;&lt;/li&gt;&lt;li data-section-id=&quot;1n7pl00&quot; data-start=&quot;2101&quot; data-end=&quot;2122&quot;&gt;controlar vigência;&lt;/li&gt;&lt;li data-section-id=&quot;a3ixki&quot; data-start=&quot;2123&quot; data-end=&quot;2148&quot;&gt;consolidar o histórico;&lt;/li&gt;&lt;li data-section-id=&quot;1km18t8&quot; data-start=&quot;2149&quot; data-end=&quot;2190&quot;&gt;definir qual informação está publicada;&lt;/li&gt;&lt;li data-section-id=&quot;17xz3w1&quot; data-start=&quot;2191&quot; data-end=&quot;2245&quot;&gt;disponibilizar consultas transacionais e analíticas;&lt;/li&gt;&lt;li data-section-id=&quot;tt4bh6&quot; data-start=&quot;2246&quot; data-end=&quot;2288&quot;&gt;aplicar regras de acesso e distribuição.&lt;/li&gt;&lt;/ul&gt;&lt;p data-start=&quot;2290&quot; data-end=&quot;2326&quot;&gt;Ele responde a perguntas diferentes:&lt;/p&gt;&lt;ul data-start=&quot;2328&quot; data-end=&quot;2668&quot;&gt;&lt;li data-section-id=&quot;6coqqg&quot; data-start=&quot;2328&quot; data-end=&quot;2382&quot;&gt;Qual é a visão institucional vigente da propriedade?&lt;/li&gt;&lt;li data-section-id=&quot;qdf2dc&quot; data-start=&quot;2383&quot; data-end=&quot;2420&quot;&gt;De qual fonte veio cada informação?&lt;/li&gt;&lt;li data-section-id=&quot;1en6r3u&quot; data-start=&quot;2421&quot; data-end=&quot;2455&quot;&gt;Existem informações divergentes?&lt;/li&gt;&lt;li data-section-id=&quot;lbg581&quot; data-start=&quot;2456&quot; data-end=&quot;2495&quot;&gt;Qual informação pode ser distribuída?&lt;/li&gt;&lt;li data-section-id=&quot;1dei05v&quot; data-start=&quot;2496&quot; data-end=&quot;2549&quot;&gt;Qual era a visão institucional em determinada data?&lt;/li&gt;&lt;li data-section-id=&quot;1bcl6ps&quot; data-start=&quot;2550&quot; data-end=&quot;2616&quot;&gt;Essa informação é observada, declarada, estimada ou consolidada?&lt;/li&gt;&lt;li data-section-id=&quot;1vo0uo1&quot; data-start=&quot;2617&quot; data-end=&quot;2668&quot;&gt;Qual fonte possui precedência para esse atributo?&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="420" width="480" x="1120" y="2240" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-33" parent="1" style="text;whiteSpace=wrap;html=1;spacingLeft=3;" value="&lt;h2 data-section-id=&quot;jdqi3y&quot; data-start=&quot;4202&quot; data-end=&quot;4263&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot;&gt;O modelo do Birô não deve copiar o modelo de Produtividade&lt;span aria-hidden=&quot;true&quot; class=&quot;PDq2pG_selectionAnchor&quot;&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p data-start=&quot;4265&quot; data-end=&quot;4311&quot;&gt;Produtividade pode possuir uma estrutura como:&lt;/p&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;4313&quot; data-end=&quot;4480&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-(--code-block-surface) corner-superellipse/1.1 overflow-clip rounded-3xl [--code-block-surface:var(--bg-elevated-secondary)] dark:[--code-block-surface:var(--composer-surface-primary)] lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼs ͼ16&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;pre class=&quot;cm-content q9tKkq_readonly m-0&quot;&gt;&lt;code&gt;&lt;span&gt;EstimativaDeProdutividade&lt;br&gt;├── area_cultivada&lt;br&gt;├── safra&lt;br&gt;├── cultura&lt;br&gt;├── sacas_por_hectare&lt;br&gt;├── producao_estimada&lt;br&gt;├── confianca&lt;br&gt;├── modelo&lt;br&gt;└── data_inferencia&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;p data-start=&quot;4482&quot; data-end=&quot;4537&quot;&gt;O Birô pode traduzir isso para um modelo mais genérico:&lt;/p&gt;&lt;pre class=&quot;overflow-visible! px-0!&quot; data-start=&quot;4539&quot; data-end=&quot;4739&quot;&gt;&lt;div class=&quot;relative w-full mt-4 mb-1&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;h-full min-h-0 min-w-0&quot;&gt;&lt;div class=&quot;border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl&quot;&gt;&lt;div class=&quot;h-full w-full border-radius-3xl bg-(--code-block-surface) corner-superellipse/1.1 overflow-clip rounded-3xl [--code-block-surface:var(--bg-elevated-secondary)] dark:[--code-block-surface:var(--composer-surface-primary)] lxnfua_clipPathFallback&quot;&gt;&lt;div class=&quot;relative&quot;&gt;&lt;div class=&quot;pe-11 pt-3&quot;&gt;&lt;div class=&quot;relative z-0 flex max-w-full&quot;&gt;&lt;div id=&quot;code-block-viewer&quot; dir=&quot;ltr&quot; class=&quot;q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼs ͼ16&quot;&gt;&lt;div class=&quot;cm-scroller&quot;&gt;&lt;pre class=&quot;cm-content q9tKkq_readonly m-0&quot;&gt;&lt;code&gt;&lt;span&gt;InformacaoDaPropriedade&lt;br&gt;├── propriedade&lt;br&gt;├── categoria&lt;br&gt;├── valor&lt;br&gt;├── período_referencia&lt;br&gt;├── fonte&lt;br&gt;├── método_de_obtencao&lt;br&gt;├── confiança&lt;br&gt;├── vigência&lt;br&gt;├── status_de_consolidacao&lt;br&gt;└── evidências&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="420" width="560" x="1030" y="3320" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-37" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="&lt;div&gt;Contexto&lt;/div&gt;Produtividade Agropecuária&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="3360" y="2400" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-38" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="&lt;div&gt;Contexto&lt;/div&gt;Fornecedores Externos" vertex="1">
+          <mxGeometry height="60" width="240" x="3680" y="2400" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-40" edge="1" parent="1" source="9io1BMaQ7AhXAmXuntyE-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="9io1BMaQ7AhXAmXuntyE-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="&lt;div&gt;Contexto&lt;/div&gt;Biro de Informações Rurais" vertex="1">
+          <mxGeometry height="60" width="240" x="3530" y="2520" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;" value="&lt;div&gt;Contexto&lt;/div&gt;Consumidores" vertex="1">
+          <mxGeometry height="60" width="240" x="3530" y="2640" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-41" parent="1" style="text;whiteSpace=wrap;html=1;spacingLeft=2;" value="&lt;b&gt;Domínio:&lt;/b&gt; Agronegócio&lt;br&gt;&lt;br&gt;&lt;b&gt;Subdomínio principal:&lt;/b&gt;&lt;br&gt;└── Produtividade Agropecuária&lt;br&gt;    ├── Monitoramento de safras&lt;br&gt;└── Histórico produtivo&lt;br&gt;&lt;br&gt;&lt;b&gt;Subdomínio de suporte:&lt;/b&gt;&lt;br&gt;└── Gestão da informação do uso do solo&lt;br&gt;    ├── Ingestão e integração de informações&lt;br&gt;    ├── Associação com propriedades&lt;br&gt;    ├── Tratamento de divergências&lt;br&gt;    ├── Consolidação institucional&lt;br&gt;    └── Distribuição transacional e analítica&lt;br&gt;&lt;br&gt;&lt;b&gt;Contextos delimitados:&lt;/b&gt;&lt;br&gt;├── Produtividade Agropecuária&lt;br&gt;└── Birô de Informações Rurais" vertex="1">
+          <mxGeometry height="300" width="280" x="920" y="2800" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-42" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;p data-start=&quot;0&quot; data-end=&quot;124&quot; class=&quot;PDq2pG_selectionAnchorContainer&quot;&gt;&lt;strong data-start=&quot;5&quot; data-end=&quot;82&quot;&gt;O nome do subdomínio não precisa ser igual ao nome do contexto delimitado&lt;/strong&gt;, porque representam conceitos diferentes:&lt;/p&gt;&lt;ul data-start=&quot;126&quot; data-end=&quot;387&quot;&gt;&lt;li data-section-id=&quot;19h5ypg&quot; data-start=&quot;126&quot; data-end=&quot;187&quot;&gt;&lt;strong data-start=&quot;128&quot; data-end=&quot;143&quot;&gt;Subdomínio:&lt;/strong&gt; parte do problema ou capacidade de negócio.&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;10jriag&quot; data-start=&quot;188&quot; data-end=&quot;299&quot;&gt;&lt;strong data-start=&quot;190&quot; data-end=&quot;214&quot;&gt;Contexto delimitado:&lt;/strong&gt; fronteira dentro da qual existe um modelo consistente para solucionar esse problema.&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1opsblr&quot; data-start=&quot;300&quot; data-end=&quot;387&quot;&gt;&lt;strong data-start=&quot;302&quot; data-end=&quot;322&quot;&gt;Sistema/produto:&lt;/strong&gt; implementação tecnológica ou produto que materializa o contexto.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p data-start=&quot;389&quot; data-end=&quot;415&quot;&gt;No exemplo anterior, usei:&lt;/p&gt;&lt;ul data-start=&quot;417&quot; data-end=&quot;529&quot;&gt;&lt;li data-section-id=&quot;8jy5as&quot; data-start=&quot;417&quot; data-end=&quot;475&quot;&gt;Subdomínio: &lt;strong data-start=&quot;431&quot; data-end=&quot;475&quot;&gt;Gestão Institucional da Informação Rural&lt;/strong&gt;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;lffo4q&quot; data-start=&quot;476&quot; data-end=&quot;529&quot;&gt;Contexto delimitado: &lt;strong data-start=&quot;499&quot; data-end=&quot;529&quot;&gt;Birô de Informações Rurais&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="190" width="560" x="1280" y="2800" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-43" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;b&gt;Domínio: &lt;/b&gt;Agronegócio&lt;br&gt;&lt;br&gt;&lt;b&gt;Subdomínio principal:&lt;/b&gt;&lt;br&gt;└── Produtividade Agropecuária&lt;br&gt;&lt;br&gt;&lt;b&gt;Subdomínio de suporte:&lt;/b&gt;&lt;br&gt;└── Gestão Institucional da Informação Rural&lt;br&gt;&lt;br&gt;&lt;b&gt;Contextos delimitados:&lt;/b&gt;&lt;br&gt;├── Produtividade Agropecuária&lt;br&gt;└── Gestão Institucional da Informação Rural&lt;br&gt;&lt;br&gt;&lt;b&gt;Produto:&lt;/b&gt;&lt;br&gt;└── Birô de Informações Rurais" vertex="1">
+          <mxGeometry height="220" width="280" x="560" y="2800" as="geometry" />
+        </mxCell>
+        <mxCell id="9io1BMaQ7AhXAmXuntyE-44" parent="1" style="text;whiteSpace=wrap;html=1;" value="Subdomínios e contextos delimitados não possuem relação obrigatória de contenção. Contextos delimitados são modelos de solução criados para atender total ou parcialmente os subdomínios identificados no espaço do problema." vertex="1">
+          <mxGeometry height="70" width="560" x="-160" y="2150" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-2" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" target="9io1BMaQ7AhXAmXuntyE-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-3" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" target="9io1BMaQ7AhXAmXuntyE-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SQUAD - Produtividade Agropecuária&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="240" x="840" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;spacingLeft=3;spacingRight=3;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Contexto Delimitado&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Contexto delimitados são projetados. A divisão de um domínio em contextos delimitados é uma decisão de design estrategico.&amp;nbsp;&lt;/div&gt;&lt;div&gt;Projetamos esses limites como parte da solução. Cada modelo tem a intenção de resolver um problema específico.&lt;/div&gt;&lt;div&gt;Cada contexto delimitado deve ser implementado como um projeto/serviço individual, o que significa que ele e implementado, desenvolvido e atualizado independentemente dos outros contextos delimitados.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;O ciclo de vida de cada contexto delimitado é separado.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Cada contexto delimitado pode evoluir independentemente do resto do sistema. Entretanto, os contextos delimitados tem que trabalhar em conjunto para formar um sistema. Algumas mudanças afetarão sem querer o outro contexto delimitado.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Limites físicos claros entre contexto delimitados nos permitem implementar cada contexto delimitado com o empilhamento de tecnologias mais adequado as suas necessidades.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Um contexto delimitado pode conter múltiplos subdominios.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Um contexto delimitado deve ser implementado, desenvolvido e mantido por apenas uma equipe.&lt;div&gt;Entretanto, uma unica equipe pode ter múltiplos contextos delimitados.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="320" width="600" x="-160" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;spacingLeft=3;spacingRight=3;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Subdomínio&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Contexto d&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="600" x="-160" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;spacingLeft=3;spacingRight=3;fontSize=15;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;É sobre alinhas o design de software com o domínios de negocios.&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="480" x="-160" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-10" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;spacing=0;spacingLeft=5;" value="DDD - Domain-Driven Design" vertex="1">
+          <mxGeometry height="40" width="320" x="-160" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-12" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;spacing=0;spacingLeft=5;spacingRight=5;" value="Ambição:&amp;nbsp;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Organizar toda a informação da propriedade rural&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Ser uma solução institucional onde organiza, consolida e distribui informações do uso do solo, como plantio, agricultura e irrigação.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Mandato&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Propriedade rural (car, nirf, matriculo, georreferenciamento)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- ISG (socioambiental)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Uso do Solo (grãos, pecuária etc)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Fontes de dados:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Produtividade Agropecuária (modelos)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Propriedade Rural (KJ4)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Serasa&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;- Fornecedores externos contratados&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="400" width="840" x="3560" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-15" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Modelagem" vertex="1">
+          <mxGeometry height="60" width="160" x="3640" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Gestão do Biro do Uso do Solo" vertex="1">
+          <mxGeometry height="60" width="160" x="3960" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-20" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-21" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Disponibilizar" vertex="1">
+          <mxGeometry height="60" width="120" x="4120" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Varejo" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Terra Vista" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Modelagem" vertex="1">
+          <mxGeometry height="60" width="160" x="3920" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Gestão do Biro do Uso do Solo" vertex="1">
+          <mxGeometry height="60" width="200" x="3880" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-36" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4140" y="1000" />
+              <mxPoint x="3840.04" y="1000" />
+              <mxPoint x="3840.04" y="1050" />
+            </Array>
+            <mxPoint x="4140" y="950" as="sourcePoint" />
+            <mxPoint x="3880" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Conexão" vertex="1">
+          <mxGeometry height="30" width="120" x="4080" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Varejo" vertex="1">
+          <mxGeometry height="60" width="200" x="4280" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Terra Vista" vertex="1">
+          <mxGeometry height="60" width="200" x="4280" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-45" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-46" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Disponibilizar" vertex="1">
+          <mxGeometry height="60" width="120" x="4080" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Conexão" vertex="1">
+          <mxGeometry height="60" width="120" x="3800" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-44" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Disponibilizar" vertex="1">
+          <mxGeometry height="30" width="120" x="4080" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-47" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Modelagem" vertex="1">
+          <mxGeometry height="60" width="160" x="3600" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Gestão do Biro do Uso do Solo" vertex="1">
+          <mxGeometry height="60" width="160" x="3960" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-50" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-51" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-68" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-70" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Disponibilizar" vertex="1">
+          <mxGeometry height="60" width="120" x="4120" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Varejo" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Terra Vista" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Conexão" vertex="1">
+          <mxGeometry height="60" width="120" x="3760" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Propriedade Rural" vertex="1">
+          <mxGeometry height="60" width="160" x="3600" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-58" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;" target="Sf8xp0tLqEbCgT2BQCPK-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Conexão" vertex="1">
+          <mxGeometry height="60" width="120" x="3760" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-61" edge="1" parent="1" source="Sf8xp0tLqEbCgT2BQCPK-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Sf8xp0tLqEbCgT2BQCPK-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3830" y="1880" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" value="Serasa" vertex="1">
+          <mxGeometry height="40" width="160" x="3440" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" value="Fornecedores Externos" vertex="1">
+          <mxGeometry height="40" width="160" x="3440" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Integrações" vertex="1">
+          <mxGeometry height="120" width="160" x="3600" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Conexão" vertex="1">
+          <mxGeometry height="120" width="120" x="3760" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-66" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#eeeeee;strokeColor=#36393d;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="4039.66" y="1510" as="sourcePoint" />
+            <mxPoint x="4039.66" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Sistemas" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Analítico&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="200" x="4320" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="Sf8xp0tLqEbCgT2BQCPK-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" value="Outros" vertex="1">
+          <mxGeometry height="40" width="160" x="3440" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;spacingTop=0;arcSize=8;fontColor=#333333;" value="CONTEXTO DELIMITADO&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Propriedade Rural&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="240" x="1400" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-3" edge="1" parent="1" source="T8LbnV8rt_9W7EwadGl_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="T8LbnV8rt_9W7EwadGl_-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SQUAD - Inteligencia da Propriedade" vertex="1">
+          <mxGeometry height="40" width="240" x="1400" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;spacingTop=0;arcSize=8;fontColor=#333333;" value="CONTEXTO DELIMITADO&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Ingestão e Integração de Dados Externos&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;dados somente relacionados a uso do solo?&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;serasa não tem dados do solo&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="240" x="1680" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-5" edge="1" parent="1" source="T8LbnV8rt_9W7EwadGl_-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="T8LbnV8rt_9W7EwadGl_-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T8LbnV8rt_9W7EwadGl_-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SQUAD - Produtividade Agropecuária" vertex="1">
+          <mxGeometry height="40" width="240" x="1680" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1E5631;strokeColor=#1E5631;" value="" vertex="1">
+          <mxGeometry height="150" width="1780" x="5730" y="-910" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=30;fontStyle=1;fontColor=#FFFFFF;" value="WORKSHOP — BIRÔ DE INFORMAÇÕES RURAIS" vertex="1">
+          <mxGeometry height="50" width="780" x="5770" y="-885" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-7" parent="1" style="swimlane;html=1;rounded=1;startSize=38;horizontal=1;fillColor=#DDEBDD;swimlaneFillColor=#F7FBF8;strokeColor=#7EAD89;fontSize=16;fontStyle=1;container=0;" value="DDD — REFERÊNCIA RÁPIDA" vertex="1">
+          <mxGeometry height="200" width="2120" x="5720" y="-720" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AAB7AE;fontSize=15;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Domínio&lt;/b&gt;&lt;br&gt;Área ampla do negócio que queremos compreender." vertex="1">
+          <mxGeometry height="105" width="470" x="5745" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AAB7AE;fontSize=15;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Subdomínio&lt;/b&gt;&lt;br&gt;Parte do problema com capacidades, regras e objetivos próprios." vertex="1">
+          <mxGeometry height="105" width="500" x="6240" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AAB7AE;fontSize=15;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Contexto delimitado&lt;/b&gt;&lt;br&gt;Fronteira onde um modelo e sua linguagem permanecem consistentes." vertex="1">
+          <mxGeometry height="105" width="520" x="6765" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AAB7AE;fontSize=15;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Mapa de contextos&lt;/b&gt;&lt;br&gt;Mostra dependências, direção da informação e relações entre modelos." vertex="1">
+          <mxGeometry height="105" width="500" x="7310" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-16" parent="1" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#F8CECC;swimlaneFillColor=#FFF8F7;strokeColor=#B85450;fontSize=18;fontStyle=1;container=0;" value="1 · ESCOPO" vertex="1">
+          <mxGeometry height="440" width="640" x="4960" y="-240" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-19" parent="8mPQZxT3K0hxClphjOjt-16" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=16;align=left;verticalAlign=top;spacing=14;" value="&lt;b&gt;HIPÓTESE B&lt;/b&gt;&lt;br&gt;&lt;br&gt;Birô de Informações Rurais&lt;br&gt;&lt;br&gt;Escopo amplo: propriedade, documentos, socioambiental, uso do solo, produção e fontes externas." vertex="1">
+          <mxGeometry height="265" width="270" x="330" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-18" parent="8mPQZxT3K0hxClphjOjt-16" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=16;align=left;verticalAlign=top;spacing=14;" value="&lt;b&gt;HIPÓTESE A&lt;/b&gt;&lt;br&gt;&lt;br&gt;Birô de Uso do Solo&lt;br&gt;&lt;br&gt;Escopo concentrado em ocupação, cobertura, agricultura, pastagem, vegetação, água e mudanças territoriais." vertex="1">
+          <mxGeometry height="265" width="270" x="40" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-17" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=19;fontStyle=1;fontColor=#7A2E2A;" value="Qual problema estamos tentando resolver?" vertex="1">
+          <mxGeometry height="60" width="600" x="4980" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-22" parent="1" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#eeeeee;swimlaneFillColor=#FFFFFF;strokeColor=#36393d;fontSize=20;fontStyle=1;container=0;" value="2 · SUBDOMÍNIOS&amp;nbsp;" vertex="1">
+          <mxGeometry height="600" width="1240" x="5800" y="-240" as="geometry">
+            <mxRectangle height="48" width="380" x="780" y="420" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#97D077;fontSize=20;align=center;verticalAlign=middle;strokeWidth=3;" value="DOMÍNIO&lt;br&gt;&lt;b&gt;Agronegócio&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="1160" x="5840" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-25" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Modelagem Agrícola&amp;nbsp;&lt;/b&gt;&lt;br&gt;Onde, o que, quando e quanto é produzido." vertex="1">
+          <mxGeometry height="170" width="360" x="6240" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-26" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;align=left;verticalAlign=top;spacing=12;spacingRight=15;" value="&lt;b&gt;Gestão Institucional da informacao do uso do solo rural&lt;/b&gt;&lt;br&gt;Consolidar, governar e distribuir a visão institucional." vertex="1">
+          <mxGeometry height="170" width="360" x="5840" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-27" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Inteligência da Propriedade Rural&lt;/b&gt;&lt;br&gt;Identificar propriedades, documentos, vínculos e geometrias." vertex="1">
+          <mxGeometry height="170" width="360" x="6640" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-28" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FFF2CC;strokeColor=#D6B656;dashed=1;fontSize=15;align=left;verticalAlign=top;spacing=12;" value="NOVO SUBDOMÍNIO / CAPACIDADE&lt;br&gt;&lt;br&gt;Duplique este cartão para registrar novos elementos." vertex="1">
+          <mxGeometry height="170" width="360" x="6240" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-30" parent="1" style="swimlane;html=1;rounded=1;startSize=48;horizontal=1;fillColor=#D5E8D4;swimlaneFillColor=#F7FBF7;strokeColor=#82B366;fontSize=18;fontStyle=1;container=0;" value="3 · DESENHAR OS CONTEXTOS DELIMITADOS" vertex="1">
+          <mxGeometry height="560" width="1000" x="7240" y="-241" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-32" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1E5631;strokeWidth=2;endArrow=block;endFill=1;" target="8mPQZxT3K0hxClphjOjt-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7560" y="-11" />
+              <mxPoint x="7560" y="109" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-33" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#005700;strokeWidth=2;endArrow=block;endFill=1;fillColor=#008a00;" target="8mPQZxT3K0hxClphjOjt-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-34" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#005700;strokeWidth=2;endArrow=block;endFill=1;fillColor=#008a00;" target="8mPQZxT3K0hxClphjOjt-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7560" y="229" />
+              <mxPoint x="7560" y="109" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-35" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1E5631;strokeWidth=2;endArrow=block;endFill=1;" target="8mPQZxT3K0hxClphjOjt-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-36" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1E5631;strokeWidth=2;endArrow=block;endFill=1;" target="8mPQZxT3K0hxClphjOjt-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Produtividade&lt;br&gt;Agropecuária&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Resultados e estimativas dos modelos&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="240" x="7280" y="-61" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Inteligência da&lt;br&gt;Propriedade&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Identidade, documentos e geometria&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="240" x="7280" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Fontes externas&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Serasa, fornecedores e outros sistemas&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="240" x="7280" y="178" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7EFEA;strokeColor=#1E5631;strokeWidth=3;fontSize=15;align=center;verticalAlign=middle;spacing=10;" value="&lt;b&gt;CONSOLIDAÇÃO INSTITUCIONAL&lt;/b&gt;&lt;br&gt;&lt;br&gt;Receber e validar&lt;br&gt;Controlar proveniência e vigência&lt;br&gt;Tratar divergências e precedência&lt;br&gt;Consolidar histórico&lt;br&gt;&lt;b&gt;Publicar e distribuir&lt;/b&gt;" vertex="1">
+          <mxGeometry height="300" width="320" x="7600" y="-41" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Consumidores&lt;br&gt;transacionais&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="8000" y="-21" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Consumidores&lt;br&gt;analíticos&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="8000" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-45" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#684A75;" value="O que cada contexto conhece, decide, governa e publica?" vertex="1">
+          <mxGeometry height="40" width="560" x="8430" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;align=left;verticalAlign=top;spacing=14;arcSize=6;" value="&lt;b&gt;Conhece:&lt;/b&gt; cultura, safra, ciclo, produtividade.&lt;br&gt;&lt;b&gt;Decide:&lt;/b&gt; resultado, confiança, versão e revisão.&lt;br&gt;&lt;b&gt;Publica:&lt;/b&gt; fatos e estimativas especializadas.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="400" width="440" x="8430" y="-1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;align=left;verticalAlign=top;spacing=14;arcSize=6;" value="&lt;b&gt;Conhece:&lt;/b&gt; identidade, documentos, vínculos e geometria.&lt;br&gt;&lt;b&gt;Decide:&lt;/b&gt; qual propriedade e cadastro são válidos.&lt;br&gt;&lt;b&gt;Publica:&lt;/b&gt; referências cadastrais e territoriais.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="400" width="440" x="8910" y="-1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=16;align=left;verticalAlign=top;spacing=14;arcSize=6;" value="&lt;b&gt;Conhece:&lt;/b&gt; fonte, evidência, vigência e divergência.&lt;br&gt;&lt;b&gt;Decide:&lt;/b&gt; precedência e visão institucional.&lt;br&gt;&lt;b&gt;Publica:&lt;/b&gt; visão vigente e histórica no transacional e analítico.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="400" width="440" x="9390" y="-1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-54" parent="1" style="swimlane;html=1;rounded=1;startSize=42;horizontal=1;fillColor=#DAE8FC;swimlaneFillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=17;fontStyle=1;container=0;" value="PRÓXIMO · VALIDAR" vertex="1">
+          <mxGeometry height="530" width="700" x="5680" y="-1620" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-63" parent="8mPQZxT3K0hxClphjOjt-54" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;dashed=1;fontSize=16;align=center;verticalAlign=middle;" value="NOVO ITEM" vertex="1">
+          <mxGeometry height="115" width="290" x="60" y="94" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-55" parent="1" style="swimlane;html=1;rounded=1;startSize=42;horizontal=1;fillColor=#E1D5E7;swimlaneFillColor=#FFFFFF;strokeColor=#9673A6;fontSize=17;fontStyle=1;container=0;" value="DEPOIS · ESCALAR" vertex="1">
+          <mxGeometry height="530" width="730" x="6430" y="-1620" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-67" parent="8mPQZxT3K0hxClphjOjt-55" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#E1D5E7;strokeColor=#9673A6;dashed=1;fontSize=16;align=center;verticalAlign=middle;" value="NOVO ITEM" vertex="1">
+          <mxGeometry height="115" width="310" x="45" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-79" parent="1" style="text;html=1;align=left;fontSize=30;fontStyle=1;fontColor=#2C5F2D;" value="Birô de Informações Rurais — Sessão de Trabalho (DDD)" vertex="1">
+          <mxGeometry height="44" width="1100" x="5730" y="-1020" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-82" parent="1" style="rounded=1;arcSize=3;fillColor=none;strokeColor=#C9D3C2;strokeWidth=2;dashed=1;dashPattern=8 6;verticalAlign=top;align=left;fontStyle=1;fontSize=15;fontColor=#5B665B;spacingLeft=14;spacingTop=10;html=1;" value="MAPA DE CONTEXTOS  ·  arraste e reorganize" vertex="1">
+          <mxGeometry height="561" width="1200" x="7170" y="558" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-83" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B85C38;strokeWidth=2;fontColor=#1E2A1E;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10;shadow=1;" value="Produtividade Agropecuária&#xa;&#xa;Squad de modelagem&#xa;Upstream · fornecedor" vertex="1">
+          <mxGeometry height="120" width="250" x="7210" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-84" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A9A4E;strokeWidth=2;fontColor=#1E2A1E;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10;shadow=1;" value="Inteligência da Propriedade&#xa;&#xa;Squad Intel. da Propriedade&#xa;Upstream · fornecedor" vertex="1">
+          <mxGeometry height="120" width="250" x="7210" y="798" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-85" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B665B;strokeWidth=2;fontColor=#1E2A1E;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10;shadow=1;" value="Ingestão de Dados Externos&#xa;&#xa;Serasa e fornecedores&#xa;Upstream técnico" vertex="1">
+          <mxGeometry height="120" width="250" x="7210" y="958" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-86" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#2C5F2D;strokeColor=#24491F;fontColor=#FFFFFF;fontSize=15;fontStyle=1;verticalAlign=top;spacingTop=10;shadow=1;" value="Gestão da Informação do Uso do Solo&#xa;O NÚCLEO DO BIRÔ" vertex="1">
+          <mxGeometry height="360" width="320" x="7610" y="678" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-87" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#3B7A3C;strokeColor=none;fontColor=#F4F5EF;fontSize=12;align=left;spacingLeft=10;" value="Traduz — camada anticorrupção" vertex="1">
+          <mxGeometry height="46" width="280" x="7630" y="768" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-88" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#3B7A3C;strokeColor=none;fontColor=#F4F5EF;fontSize=12;align=left;spacingLeft=10;" value="Consolida por precedência (por atributo)" vertex="1">
+          <mxGeometry height="46" width="280" x="7630" y="826" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-89" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#3B7A3C;strokeColor=none;fontColor=#F4F5EF;fontSize=12;align=left;spacingLeft=10;" value="Controla vigência e proveniência" vertex="1">
+          <mxGeometry height="46" width="280" x="7630" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-90" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#3B7A3C;strokeColor=none;fontColor=#F4F5EF;fontSize=12;align=left;spacingLeft=10;" value="Publica transacional e analítico" vertex="1">
+          <mxGeometry height="46" width="280" x="7630" y="942" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-92" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2F7A6B;strokeWidth=2;fontColor=#1E2A1E;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10;shadow=1;" value="Transacional&#xa;&#xa;Varejo, sistemas" vertex="1">
+          <mxGeometry height="100" width="230" x="8090" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-93" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2F7A6B;strokeWidth=2;fontColor=#1E2A1E;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=10;shadow=1;" value="Analítico&#xa;&#xa;Terra Vista, BI" vertex="1">
+          <mxGeometry height="100" width="230" x="8090" y="899" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-94" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-83" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6A9A4E;strokeWidth=2.5;endArrow=block;endFill=1;fontColor=#2C5F2D;fontSize=12;fontStyle=1;labelBackgroundColor=#F4F5EF;" target="8mPQZxT3K0hxClphjOjt-86" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7530.03" y="698" />
+              <mxPoint x="7530.03" y="858" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-95" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-84" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6A9A4E;strokeWidth=2.5;endArrow=block;endFill=1;fontColor=#2C5F2D;fontSize=12;fontStyle=1;labelBackgroundColor=#F4F5EF;" target="8mPQZxT3K0hxClphjOjt-86" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-96" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-85" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6A9A4E;strokeWidth=2.5;endArrow=block;endFill=1;fontColor=#2C5F2D;fontSize=12;fontStyle=1;labelBackgroundColor=#F4F5EF;" target="8mPQZxT3K0hxClphjOjt-86" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="7530.03" y="1018" />
+              <mxPoint x="7530.03" y="858" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-97" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-86" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6A9A4E;strokeWidth=2.5;endArrow=block;endFill=1;fontColor=#2C5F2D;fontSize=12;fontStyle=1;labelBackgroundColor=#F4F5EF;" target="8mPQZxT3K0hxClphjOjt-92" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-98" edge="1" parent="1" source="8mPQZxT3K0hxClphjOjt-86" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6A9A4E;strokeWidth=2.5;endArrow=block;endFill=1;fontColor=#2C5F2D;fontSize=12;fontStyle=1;labelBackgroundColor=#F4F5EF;" target="8mPQZxT3K0hxClphjOjt-93" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-100" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3C2;fontColor=#1E2A1E;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;" value="1 · Qual é o nome (e o escopo) do produto?" vertex="1">
+          <mxGeometry height="160" width="680" x="7260" y="-1470" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-101" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#ECF0E7;strokeColor=#6A9A4E;strokeWidth=1.5;fontColor=#2C5F2D;fontSize=13;fontStyle=1;shadow=1;" value="Birô de Uso do Solo" vertex="1">
+          <mxGeometry height="44" width="190" x="7270" y="-1424" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-102" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#ECF0E7;strokeColor=#6A9A4E;strokeWidth=1.5;fontColor=#2C5F2D;fontSize=13;fontStyle=1;shadow=1;" value="Birô de Informações Rurais" vertex="1">
+          <mxGeometry height="44" width="210" x="7475" y="-1424" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-103" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#ECF0E7;strokeColor=#6A9A4E;strokeWidth=1.5;fontColor=#2C5F2D;fontSize=13;fontStyle=1;shadow=1;" value="Gestão Institucional da Inf. Rural" vertex="1">
+          <mxGeometry height="44" width="230" x="7700" y="-1424" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-104" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6A9A4E;strokeWidth=1.5;dashed=1;dashPattern=6 5;fontColor=#6A9A4E;fontSize=12;fontStyle=2;align=center;verticalAlign=middle;" value="Decisão →  arraste aqui" vertex="1">
+          <mxGeometry height="40" width="660" x="7270" y="-1366" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-120" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2C4;strokeColor=#E0C36A;fontColor=#5A4A10;size=18;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;shadow=1;fontSize=12;" value="ESTACIONAMENTO — dúvidas e temas para depois&#xa;&#xa;(escreva aqui, ou solte notas amarelas)&#xa;&#xa;•&#xa;•&#xa;•&#xa;•" vertex="1">
+          <mxGeometry height="250" width="340" x="8080" y="-1550" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-149" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;align=left;verticalAlign=top;spacing=12;" value="&lt;b&gt;Ingestão e Integração de dados externos&amp;nbsp;&lt;/b&gt;&lt;br&gt;Consolidar, governar e distribuir a visão institucional." vertex="1">
+          <mxGeometry height="170" width="360" x="5840" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-150" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Modelagem Agrícola&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Resultados e estimativas dos modelos&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="235" x="8460" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-151" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Inteligência da&lt;br&gt;Propriedade&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Identidade, documentos e geometria&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="235" x="8930" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-152" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontSize=16;align=center;verticalAlign=middle;" value="&lt;b&gt;Ingestão e integração de fontes externas sobre uso do solo&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Serasa, fornecedores e outros sistemas&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="235" x="8460" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-153" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;rounded=1;arcSize=8;" value="&lt;span style=&quot;font-size: 16px; text-align: left;&quot;&gt;PRODUTIVIDADE AGROPECUÁRIA&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="440" x="8430" y="-81" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-154" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;rounded=1;arcSize=8;" value="&lt;span style=&quot;font-size: 16px; text-align: left;&quot;&gt;INTELIGÊNCIA DA PROPRIEDADE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="440" x="8910" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-155" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#9673a6;fillColor=#e1d5e7;align=center;verticalAlign=middle;rounded=1;arcSize=8;" value="&lt;span style=&quot;font-size: 16px; text-align: left;&quot;&gt;JORNADA&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="440" x="9390" y="-81" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-31" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#2F6B32;" value="Quem é autoridade sobre cada informação e como os modelos se relacionam?" vertex="1">
+          <mxGeometry height="50" width="840" x="7280" y="-161" as="geometry" />
+        </mxCell>
+        <mxCell id="8mPQZxT3K0hxClphjOjt-158" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="8270" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
