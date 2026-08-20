@@ -1,0 +1,71 @@
+
+Sua intuição está certa no efeito, mas a causa provavelmente não é uma "fila de prioridade" explícita — é uma combinação de como a capacidade é retida e quais mecanismos de resiliência a AWS entregou para cada tipo de recurso. Três fatores explicam quase tudo:
+
+1. Frequência de exposição ao risco (o fator dominante)
+
+Endpoint e Space pedem capacidade uma vez e depois seguram a instância indefinidamente. Batch Transform pede capacidade em toda execução e devolve ao final.
+
+Se a probabilidade de conseguir uma GPU num instante qualquer é, digamos, 85%, o endpoint que você subiu há três semanas passou por esse sorteio uma única vez. Um Batch Transform que roda 30x por dia passa 30x por dia. Mesmo com a capacidade subjacente sendo idêntica, a taxa de falha percebida é radicalmente diferente. E tem um agravante: ao devolver a instância no fim do job, ela volta para um pool disputado — não há garantia de reaver.
+
+Isso também explica o Space: além de long-lived, geralmente é 1 instância só e frequentemente de família menos disputada.
+
+2. Batch Transform ficou para trás em mecanismos de resiliência
+
+Aqui está a assimetria real, e ela é documentada:
+
+Endpoints ganharam fallback automático de instance type (lançado em maio deste ano): você define uma lista priorizada de tipos de instância e o SageMaker percorre a lista sozinho quando há restrição de capacidade — na criação, no scale-out e no scale-in. Vale para Single Model Endpoints, endpoints baseados em Inference Components e Asynchronous Inference. Batch Transform não tem isso. 
+AWS
+Endpoints suportam capacity reservation: o CapacityReservationPreference com capacity-reservations-only, em que o SageMaker só sobe instâncias dentro de uma ML capacity reservation. E os training plans do SageMaker cobrem training jobs, clusters HyperPod e inferência — repare que Batch Transform não está na lista de TargetResources. 
+amazon
+AWS
+Training jobs ganharam fila com prioridade via a integração AWS Batch → SageMaker Training, onde job queues funcionam como área de espera com níveis de prioridade configuráveis, service environments definem a capacidade máxima, e o AWS Batch faz retry de falhas transientes. Batch Transform também ficou de fora. 
+AWS
+
+Ou seja: Batch Transform falha rápido, sem retry gerenciado, sem fallback de tipo, sem possibilidade de reserva. É o recurso mais desamparado do catálogo hoje. O InsufficientInstanceCapacity é o mesmo erro para training job, batch transform, processing job, endpoint, notebook e Studio app — o que muda é o que o serviço faz depois dele. 
+AWS re:Post
+
+3. Alocação tudo-ou-nada
+
+Se seu InstanceCount é > 1, o job precisa de N GPUs simultaneamente para começar. Um endpoint pode subir com 1 e crescer depois. Sob escassez, pedir 4 g5 de uma vez é bem mais difícil que pedir 1.
+
+Vale ainda conferir no Service Quotas: as cotas são separadas por tipo de uso (ml.g5.xlarge for transform job usage vs for endpoint usage vs for spaces usage). Se a cota de transform estiver baixa, você toma erro de limite que pode se parecer com falta de capacidade nos logs.
+
+O que eu faria no seu caso
+
+Como vocês já rodam Step Functions, na ordem de esforço/retorno:
+
+Curto prazo — dentro do Step Functions:
+
+Retry com backoff exponencial e jitter em SageMaker.ResourceLimitExceededException e falhas de capacidade, com janela longa (não 3 tentativas em 2 minutos — pense em 30-60 min espalhados).
+Implementar o ladder de tipos que o Batch Transform não tem: Catch → próximo tipo. Ex: ml.g5.xlarge → ml.g4dn.xlarge → ml.g6.xlarge. Isso replica manualmente o que os endpoints ganharam de graça.
+Reduzir InstanceCount para 1-2 e compensar com MaxConcurrentTransforms e MaxPayloadInMB mais agressivos. Menos instâncias, cada uma mais saturada.
+
+Médio prazo — mudança arquitetural, provavelmente o melhor caminho:
+
+Asynchronous Inference endpoint no lugar do Batch Transform. Mantém a semântica assíncrona (payload no S3, notificação SNS ao concluir — você já usa SNS/SQS), mas é um endpoint: ganha o fallback automático de instance type, aceita capacity reservation e, com MinInstanceCount=1, você retém a GPU em vez de re-sortear a cada job. Custa ter uma instância parada, mas em região com escassez isso é seguro de capacidade, não desperdício.
+AWS Batch sobre EC2 com ODCR, saindo do SageMaker gerenciado para essa carga. É o único jeito de ter capacidade garantida para um workload efêmero em sa-east-1, já que ODCR não se aplica a instâncias gerenciadas pelo SageMaker. Vocês já têm o caminho ECS→Batch andando, então o custo marginal é menor do que parece.
+
+Operacional:
+
+Rodar em janela fora de pico regional (madrugada BRT ajuda de verdade em sa-east-1).
+Se houver espaço regulatório (checar LGPD/residência de dados para o dado geoespacial), us-east-1 tem folga muito maior.
+
+Sobre a hipótese da fila de prioridade: a AWS não documenta ordem de atendimento entre serviços, e eu não afirmaria que existe. Mas você não precisa dela para explicar o que observa — o endpoint já está com a instância na mão, e ela nunca volta para o pool que o seu Batch Transform disputa. Sob escassez, quem chegou primeiro e segurou, venceu.
+
+===============================
+
+Pessoal, sobre a falta de GPU em sa-east-1 e por que só o Batch Transform sente tanto — levantei três causas que, somadas, explicam a assimetria:
+
+1) Frequência de exposição. Endpoint e Space pedem capacidade UMA vez e seguram a instância indefinidamente. Batch Transform pede a cada execução e devolve no fim. Se a chance de conseguir GPU num instante qualquer é ~85%, o endpoint passou por esse sorteio uma vez há três semanas; um job que roda 30x/dia passa 30x/dia. Mesma capacidade subjacente, taxa de falha percebida completamente diferente. E ao devolver a instância no fim do job, ela volta pro pool disputado — sem garantia de reaver.
+
+2) Batch Transform ficou para trás em resiliência. Isso é documentado:
+- Endpoints ganharam fallback automático de instance type (lançado em maio/2026): você define lista priorizada e o SageMaker percorre sozinho. Batch Transform não tem.
+- Endpoints suportam CapacityReservationPreference / capacity reservation. Batch Transform não.
+- Training jobs ganharam fila com prioridade via integração AWS Batch → SageMaker Training. Batch Transform ficou de fora.
+Resultado: Batch Transform falha rápido, sem retry gerenciado, sem fallback, sem reserva. É o recurso mais desamparado do catálogo hoje.
+
+3) Alocação tudo-ou-nada. Com InstanceCount > 1 o job precisa das N GPUs simultaneamente para iniciar. Endpoint sobe com 1 e cresce depois. Sob escassez, pedir 4 g5 de uma vez é bem mais difícil que pedir 1.
+
+Vale checar também o Service Quotas: as cotas são separadas por tipo de uso ("for transform job usage" vs "for endpoint usage" vs "for spaces usage"). Se a de transform estiver baixa, tomamos erro de limite que parece falta de capacidade nos logs.
+
+Sobre a teoria de fila de prioridade interna: a AWS não documenta ordem de atendimento entre serviços e eu não afirmaria que existe. Mas não precisamos dela pra explicar o que vemos — o endpoint já está com a instância na mão e ela nunca volta pro pool que o Batch Transform disputa.
